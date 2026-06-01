@@ -1,26 +1,183 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Fonts */
+  --font-body: "Plus Jakarta Sans", sans-serif;
+
+  /* Colors - Pink Theme (Default) */
+  --color-primary: #a67184;
+  --color-secondary: #b8944f;
+  --color-background: #fef0f4;
+  --color-surface: #fef0f4;
+  --color-surface-container: #fce4ea;
+  --color-surface-container-low: #fff5f7;
+  --color-surface-container-high: #fcebed;
+  --color-surface-container-highest: #f8e1e7;
+  --color-on-surface: #3d2a2f;
+  --color-on-surface-variant: #7a6268;
+  --color-on-primary: #ffffff;
+  --color-tertiary: #c5a059;
+  --color-tertiary-container: #e5d1ae;
+  --color-on-tertiary-container: #4a3c1a;
+  --color-outline-variant: #e1ced3;
+  --color-primary-fixed: #fcdce6;
+  --color-on-primary-fixed: #32141f;
+  --color-secondary-container: #f5e4c3;
+  --color-on-secondary-container: #7a5c1a;
+  --color-tertiary-fixed-dim: #dbc39a;
+  --color-secondary-fixed: #ffdea5;
+  --color-secondary-fixed-dim: #e9c177;
+  --color-surface-bright: #fef0f4;
+  --color-outline: #917b80;
+  --color-inverse-surface: #4a363a;
+
+  /* Spacing */
+  --spacing-container-max: 1280px;
+  --spacing-margin-mobile: 16px;
+  --spacing-section-gap: 120px;
+
+  /* Font Sizes */
+  --font-size-display-lg: 64px;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+[data-theme="warm"] {
+  /* Fonts */
+  --font-body: "Montserrat", sans-serif;
+
+  /* Colors - Warm Theme */
+  --color-primary: #70585b;
+  --color-secondary: #775a19;
+  --color-background: #fff8f3;
+  --color-surface: #fff8f3;
+  --color-surface-container: #faecda;
+  --color-surface-container-low: #fff2e1;
+  --color-surface-container-high: #f4e6d5;
+  --color-surface-container-highest: #eee0cf;
+  --color-on-surface: #211b10;
+  --color-on-surface-variant: #4f4445;
+  --color-on-primary: #ffffff;
+  --color-tertiary: #6b5a5f;
+  --color-tertiary-container: #f3dce2;
+  --color-on-tertiary-container: #715f65;
+  --color-outline-variant: #d2c3c4;
+  --color-primary-fixed: #fbdbde;
+  --color-on-primary-fixed: #281719;
+  --color-secondary-container: #fed488;
+  --color-on-secondary-container: #785a1a;
+  --color-tertiary-fixed-dim: #d7c1c7;
+  --color-secondary-fixed: #ffdea5;
+  --color-secondary-fixed-dim: #e9c176;
+  --color-surface-bright: #fff8f3;
+  --color-outline: #807475;
+  --color-inverse-surface: #372f24;
+
+  /* Spacing */
+  --spacing-container-max: 1200px;
+  --spacing-margin-mobile: 20px;
+  --spacing-section-gap: 80px;
+
+  /* Font Sizes */
+  --font-size-display-lg: 48px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@theme {
+  /* Custom theme vars mapped to CSS properties */
+  --color-primary: var(--color-primary);
+  --color-secondary: var(--color-secondary);
+  --color-background: var(--color-background);
+  --color-surface: var(--color-surface);
+  --color-surface-container: var(--color-surface-container);
+  --color-surface-container-low: var(--color-surface-container-low);
+  --color-surface-container-high: var(--color-surface-container-high);
+  --color-surface-container-highest: var(--color-surface-container-highest);
+  --color-on-surface: var(--color-on-surface);
+  --color-on-surface-variant: var(--color-on-surface-variant);
+  --color-on-primary: var(--color-on-primary);
+  --color-tertiary: var(--color-tertiary);
+  --color-tertiary-container: var(--color-tertiary-container);
+  --color-on-tertiary-container: var(--color-on-tertiary-container);
+  --color-outline-variant: var(--color-outline-variant);
+  --color-primary-fixed: var(--color-primary-fixed);
+  --color-on-primary-fixed: var(--color-on-primary-fixed);
+  --color-secondary-container: var(--color-secondary-container);
+  --color-on-secondary-container: var(--color-on-secondary-container);
+  --color-tertiary-fixed-dim: var(--color-tertiary-fixed-dim);
+  --color-secondary-fixed: var(--color-secondary-fixed);
+  --color-secondary-fixed-dim: var(--color-secondary-fixed-dim);
+  --color-surface-bright: var(--color-surface-bright);
+  --color-outline: var(--color-outline);
+  --color-inverse-surface: var(--color-inverse-surface);
+
+  /* Fonts */
+  --font-display-lg: "Bodoni Moda", serif;
+  --font-headline-lg: "Bodoni Moda", serif;
+  --font-headline-md: "Bodoni Moda", serif;
+  --font-body-md: var(--font-body);
+  --font-body-lg: var(--font-body);
+  --font-label-md: var(--font-body);
+  --font-label-sm: var(--font-body);
+
+  /* Spacing */
+  --spacing-unit: 8px;
+  --spacing-gutter: 24px;
+  --spacing-container-max: var(--spacing-container-max);
+  --spacing-margin-mobile: var(--spacing-margin-mobile);
+  --spacing-margin-desktop: 64px;
+  --spacing-section-gap: var(--spacing-section-gap);
+
+  /* Font Sizes */
+  --text-headline-md: 24px;
+  --text-display-lg: var(--font-size-display-lg);
+  --text-display-lg-mobile: 40px;
+  --text-body-md: 16px;
+  --text-label-sm: 12px;
+  --text-headline-lg: 32px;
+  --text-body-lg: 18px;
+  --text-label-md: 14px;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-background);
+  color: var(--color-on-surface);
+  scroll-behavior: smooth;
+  font-family: var(--font-body);
+}
+
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+}
+
+.soft-gold-border {
+  border: 1px solid #d4af37; /* Refined Gold */
+}
+
+.luxury-shadow {
+  box-shadow: 0 10px 30px -10px rgba(220, 160, 180, 0.2);
+}
+
+.glass-nav {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.product-card:hover .product-image {
+  transform: scale(1.03);
+}
+
+.fade-in {
+  animation: fadeIn 1s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }

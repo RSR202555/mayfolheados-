@@ -1,65 +1,361 @@
-import Image from "next/image";
+'use client';
+
+import { useEffect, useState } from 'react';
+import Link from 'next/link';
+import { useCart } from '@/context/CartContext';
 
 export default function Home() {
+  const [scrolled, setScrolled] = useState(false);
+  const { addToCart, openCart, cartCount } = useCart();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 20) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    // Intersection Observer for fade-in animations
+    const observerOptions = {
+      threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('opacity-100', 'translate-y-0');
+          entry.target.classList.remove('opacity-0', 'translate-y-10');
+        }
+      });
+    }, observerOptions);
+
+    const sections = document.querySelectorAll('section');
+    sections.forEach(section => {
+      section.classList.add('transition-all', 'duration-1000', 'opacity-0', 'translate-y-10');
+      observer.observe(section);
+    });
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      sections.forEach(section => observer.unobserve(section));
+    };
+  }, []);
+
+  const featuredProducts = [
+    {
+      id: 'h1',
+      name: 'Colar Gota de Luz',
+      price: 189.00,
+      image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDMqQVbX2eG2YwwUYZBxcMFwcx0gYknzEayB034ly1uPddy_Kk0XStaKewdm4h6MKRfZDBmUuRtiv2i8CAQHbPEeUjhbb8tVxd0Js9pCTjegselm5N62blgL98rwYbR5nurodDzssI40kSuNqaKybfsq6O3LgGb7z6aIqscM5PleEbZ4A19pXdvcRJnKbVqOI4MhZ-w49D6by1oZegJhB0gzdxD9UfjlXGkvou6ZR7TVquuHAyhJtZ76agaX60rWesM3MdY5HIr5q4',
+      category: 'Colares'
+    },
+    {
+      id: 'h2',
+      name: 'Anel Elo Infinito',
+      price: 124.00,
+      image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDBgAYszmUe15O62AfYTszLAtjxxAvW4QuijIN3HZD05vm-6orKm6gA4VZxtnwfBLxro7X1pCrriYhV-wOd4EcrtWElvLxXdhejImmBPGY416MKL9RFFW0xjah5rg0Yyuok7AQ3s9Mqv3yF4imhyfHi3KDD0RJj6s0XamGLyGnUOOeUv4Y-yufs0YRWaYVM-XbYtsvKyEkCppndqcS7ewabptG52UsBaGRIb6aaofe3-aKiK6FkXWP3EmlWx9rC4oFNKW9WKl-GMn4',
+      category: 'Anéis'
+    },
+    {
+      id: 'h3',
+      name: 'Brincos Aurora',
+      price: 156.00,
+      image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAWW_3MYqeHFVNXK1Bvytv68tv1pfsPc7EDeVgDn_YfYGmTe6q0M8ScYbeErDi7FQ6uUD3MkfN_MN3Tj-Hi71BC1oA8isPcTrteXO8Kco3vPZB4pq4HN-39Vaz3YrDXURmNHpISatPW5Eb0piXTojFS7w4KePLu3Ve1JslMNh1--QxexFo0qg7EfYMkq1WlwWnwELdD2oI_gCj-c9GRDf31ehpSJoj95WT0sS13CBt5CKDk8CzpoQflxjbuIb1KMcduy9XXaS9yJeY',
+      category: 'Brincos'
+    }
+  ];
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <div className="bg-background text-on-surface font-body-md min-h-screen flex flex-col">
+      {/* Top Navigation Bar */}
+      <header className={`fixed top-0 w-full z-50 flex justify-between items-center px-margin-mobile md:px-margin-desktop h-20 transition-all duration-300 border-b border-surface-variant/30 ${scrolled ? 'shadow-sm bg-surface/90 backdrop-blur-md' : 'bg-surface/70 backdrop-blur-md'}`}>
+        <div className="flex items-center gap-4 cursor-pointer active:scale-95 transition-transform text-primary">
+          <span className="material-symbols-outlined">menu</span>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+        <div className="font-display-lg text-display-lg-mobile md:text-display-lg text-primary tracking-tighter">
+          <Link href="/">May's Folheados</Link>
         </div>
+        <div className="flex items-center gap-6">
+          <div className="hidden md:flex gap-8">
+            <Link className="font-label-md text-label-md text-primary font-medium hover:text-secondary transition-colors duration-300" href="/products">
+              Boutique
+            </Link>
+            <Link className="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors duration-300" href="/products">
+              Coleções
+            </Link>
+            <a className="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">
+              História
+            </a>
+          </div>
+          <div onClick={openCart} className="flex items-center gap-4 cursor-pointer active:scale-95 transition-transform text-primary relative">
+            <span className="material-symbols-outlined">shopping_bag</span>
+            {cartCount > 0 && (
+              <span className="absolute -top-2 -right-2 bg-secondary text-white rounded-full w-5 h-5 flex items-center justify-center text-[10px] font-bold font-sans">
+                {cartCount}
+              </span>
+            )}
+          </div>
+        </div>
+      </header>
+
+      <main className="flex-grow">
+        {/* Hero Section */}
+        <section className="relative min-h-screen flex items-center pt-20 px-margin-mobile md:px-margin-desktop overflow-hidden">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-gutter w-full max-w-container-max mx-auto">
+            <div className="lg:col-span-6 flex flex-col justify-center space-y-8 z-10 py-12">
+              <div className="space-y-4">
+                <span className="font-label-md text-label-md tracking-widest text-secondary uppercase block mb-4">Coleção Primavera 2024</span>
+                <h1 className="font-display-lg text-display-lg-mobile md:text-display-lg text-primary leading-tight">
+                  A Elegância em <br /> Cada Detalhe.
+                </h1>
+                <p className="font-body-lg text-body-lg text-on-surface-variant max-w-lg">
+                  Joias banhadas a ouro com acabamento artesanal, desenhadas para elevar a sua essência com um brilho atemporal e delicado.
+                </p>
+              </div>
+              <div className="flex flex-wrap gap-4 pt-4">
+                <Link href="/products" className="px-10 py-4 bg-secondary text-white rounded-full font-label-md text-label-md hover:bg-primary transition-all luxury-shadow active:scale-95 inline-block text-center">
+                  Explorar Coleção
+                </Link>
+                <a href="#" className="px-10 py-4 border soft-gold-border text-secondary rounded-full font-label-md text-label-md hover:bg-white/50 transition-all active:scale-95 inline-block text-center">
+                  Nossa História
+                </a>
+              </div>
+            </div>
+            <div className="lg:col-span-6 relative h-[500px] lg:h-auto">
+              <div className="absolute inset-0 bg-surface-container rounded-[40px] rotate-3 -z-10 opacity-60"></div>
+              <img alt="Luxury Jewelry Showcase" className="w-full h-full object-cover rounded-[40px] luxury-shadow border-4 border-white/40" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBMK6nefhd7M3nYpmysSlwd-DA4OO4tl1xvuAmIn_eJJrZRrm6mpsBImKFBZgK14SujDk8Y54lx7swyKXVidZJL1T1JEmfGv7qEyoRki3-0lOY0vcx2naKf7qTO3HK9AKO7xceSk0SrtSBgD2QGNMtMr4yUcWZGUqdndtS3ikbr6xgcy8BBI1BRa-MBWFeuDpRCia7W3O9fZWC3CkCaymJpfo8u-A20f1op4Mcn_55-W6gA9aDHGIVxPAJ-SXNoPZfSXHwn5TeUSc" />
+            </div>
+          </div>
+        </section>
+
+        {/* Categories Section */}
+        <section className="py-section-gap px-margin-mobile md:px-margin-desktop bg-surface-container-low">
+          <div className="max-w-container-max mx-auto">
+            <div className="text-center mb-16 space-y-4">
+              <h2 className="font-display-lg text-display-lg-mobile md:text-headline-lg text-primary">Categorias</h2>
+              <div className="h-px w-24 bg-secondary mx-auto opacity-40"></div>
+            </div>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+              {/* Category Item */}
+              <Link href="/products" className="group cursor-pointer">
+                <div className="aspect-[4/5] bg-surface rounded-2xl overflow-hidden mb-4 relative flex items-center justify-center transition-transform duration-500 group-hover:scale-105 border border-white/50">
+                  <img alt="Anéis" className="w-full h-full object-cover mix-blend-multiply opacity-80" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6DZfUWhB9O4o14xHuyYiZYjZKMjqfcdRsEc_g7_zmaXEmc2_VqiQ7IOr6AZVnvYXYvAT_f9OBJKSUACoKPq3t-CYWtcK_SqT-qLQ7fNEOM4oWZ8a4QOGV-RZctpBI7PpCP7E2ns-KN3M8DorYyAzvQJO0Sb9OM_yYPLa6Rgb1LpkmpZWGJd6kSMbAL7Pf0SShCP2HTZEHx1bWhWFPULNHAhFSeRB5TNqHXD4L-94e47uv2liFRJUogwUfm-6UsxIqiXO3rXuk2ww" />
+                  <div className="absolute inset-0 bg-white/5 group-hover:bg-transparent transition-colors"></div>
+                </div>
+                <h3 className="font-headline-md text-headline-md text-center text-primary">Anéis</h3>
+              </Link>
+              {/* Category Item */}
+              <Link href="/products" className="group cursor-pointer">
+                <div className="aspect-[4/5] bg-surface rounded-2xl overflow-hidden mb-4 relative flex items-center justify-center transition-transform duration-500 group-hover:scale-105 border border-white/50">
+                  <img alt="Colares" className="w-full h-full object-cover mix-blend-multiply opacity-80" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1QMZMShl9YFlP4QZ_6wEQKTqTXfLRo5YaON2jSXTH-rS5Uz8FsXQhmQXkzJaesH5di1eloMuddQZ3HNsqm2o8x6qv-qL9FzmtCrCT-LYO6F69_7lt27Gc5Vmp_8e2frNVUx9iJqoSq8hA_B62IzycCIYna1gn0nUr4ok-KbrTnemYEuvbgh_-3jNhCVK9q5FPHdX1GdVeB8LeKIKvSfA-Buyu2JDg1qXCxoDjGmDXVdKUY7aS979jbZvNE9X1wyQGKikr4ikh8iw" />
+                </div>
+                <h3 className="font-headline-md text-headline-md text-center text-primary">Colares</h3>
+              </Link>
+              {/* Category Item */}
+              <Link href="/products" className="group cursor-pointer">
+                <div className="aspect-[4/5] bg-surface rounded-2xl overflow-hidden mb-4 relative flex items-center justify-center transition-transform duration-500 group-hover:scale-105 border border-white/50">
+                  <img alt="Brincos" className="w-full h-full object-cover mix-blend-multiply opacity-80" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9Px9tAH0SZ07yH_KONoxoR6ikeguEurYtG_UMwWxTZw4EDyZBkN2BJfKAb5WvuNtd6TEZuIK-ug1a8hE9wmrPbBnAmh9W7OH0AAaD1yDwm3skutgU9YtuZUnfGZbOvTMu0EhZEXSETQEqP128X2rBp-9NIJS6L7HOZtP9U9wGeAe1e8lGZIsESyLwhHgz5YJeqjihnsEnK2e8iYzBo0t_LQSznVBU1_rqg_WR_iz75Lj_1UcG1P5zqKqS82amVAaMemqekqFUoiE" />
+                </div>
+                <h3 className="font-headline-md text-headline-md text-center text-primary">Brincos</h3>
+              </Link>
+              {/* Category Item */}
+              <Link href="/products" className="group cursor-pointer">
+                <div className="aspect-[4/5] bg-surface rounded-2xl overflow-hidden mb-4 relative flex items-center justify-center transition-transform duration-500 group-hover:scale-105 border border-white/50">
+                  <img alt="Pulseiras" className="w-full h-full object-cover mix-blend-multiply opacity-80" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVFECkn6IqIoLANOhMJWew7lydTq36oj1YvI45dHQRKjHgjsYaBhUqL0A5UlfFzUbjyZr7j88vo83f51DEcAF2PxUCAc272iXjVW1Rx-cLkgyRSa4tbnR92LqrbPuPbC2HrJpfdTi89xUVOcCKTAAMsD6niJR4fUZzxwI51_2rZuw0KUNKnzt4UyH8UrynEZwTYA6gpQB6NnYJp9V_M3IISCcrRmC4rbTNzSdTYQhP-aT9KOyDDTUik752tCPdmMJ_PVdzmjo1dTk" />
+                </div>
+                <h3 className="font-headline-md text-headline-md text-center text-primary">Pulseiras</h3>
+              </Link>
+            </div>
+          </div>
+        </section>
+
+        {/* Featured Products */}
+        <section className="py-section-gap px-margin-mobile md:px-margin-desktop">
+          <div className="max-w-container-max mx-auto">
+            <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-4">
+              <div className="space-y-2">
+                <span className="font-label-md text-label-md text-secondary tracking-[0.2em] uppercase">Seleção Especial</span>
+                <h2 className="font-display-lg text-display-lg-mobile md:text-headline-lg text-primary">Destaques da Estação</h2>
+              </div>
+              <Link className="font-label-md text-label-md text-on-surface-variant flex items-center gap-2 group hover:text-primary transition-colors" href="/products">
+                Ver Todos os Produtos
+                <span className="material-symbols-outlined transition-transform group-hover:translate-x-1">arrow_forward</span>
+              </Link>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-12 gap-12">
+              {/* Main Product Card */}
+              <div className="md:col-span-7 space-y-6 group">
+                <div className="aspect-[16/10] bg-surface-container rounded-3xl overflow-hidden relative border border-white/40">
+                  <img alt={featuredProducts[0].name} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" src={featuredProducts[0].image} />
+                  <div className="absolute top-6 left-6 px-4 py-1 bg-white/80 backdrop-blur-md rounded-full text-primary font-label-sm text-label-sm">Novo</div>
+                  
+                  {/* Add to Cart Hover Button */}
+                  <button 
+                    onClick={() => addToCart(featuredProducts[0])}
+                    className="absolute bottom-6 right-6 px-6 py-3 bg-[#775a19]/90 text-white rounded-full font-semibold uppercase tracking-wider text-xs hover:bg-[#70585b] active:scale-95 transition-all opacity-0 group-hover:opacity-100 shadow-md backdrop-blur-md"
+                  >
+                    Adicionar ao Carrinho
+                  </button>
+                </div>
+                <div className="flex justify-between items-start pt-2">
+                  <div className="space-y-1">
+                    <h3 className="font-headline-md text-headline-md text-primary">{featuredProducts[0].name}</h3>
+                    <p className="font-body-md text-on-surface-variant italic">Banhado a Ouro 18k com Zircônia Premium</p>
+                  </div>
+                  <span className="font-headline-md text-headline-md text-secondary">
+                    {featuredProducts[0].price.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}
+                  </span>
+                </div>
+              </div>
+
+              {/* Secondary Product Stack */}
+              <div className="md:col-span-5 flex flex-col gap-12">
+                {featuredProducts.slice(1).map((prod) => (
+                  <div key={prod.id} className="group space-y-4 relative">
+                    <div className="aspect-square bg-surface-container rounded-3xl overflow-hidden border border-white/40 relative">
+                      <img alt={prod.name} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" src={prod.image} />
+                      
+                      {/* Add to Cart Hover Button */}
+                      <button 
+                        onClick={() => addToCart(prod)}
+                        className="absolute bottom-6 right-6 px-6 py-3 bg-[#775a19]/90 text-white rounded-full font-semibold uppercase tracking-wider text-xs hover:bg-[#70585b] active:scale-95 transition-all opacity-0 group-hover:opacity-100 shadow-md backdrop-blur-md"
+                      >
+                        Adicionar ao Carrinho
+                      </button>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <h3 className="font-headline-md text-headline-md text-primary">{prod.name}</h3>
+                      <span className="font-label-md text-label-md text-secondary">
+                        {prod.price.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}
+                      </span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Brand Story Section */}
+        <section className="py-section-gap px-margin-mobile md:px-margin-desktop bg-surface-container">
+          <div className="max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-2 gap-section-gap items-center">
+            <div className="relative order-2 md:order-1">
+              <div className="aspect-[3/4] rounded-[60px] overflow-hidden luxury-shadow border-8 border-white/40">
+                <img alt="Artisanal Process" className="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-XB4dxAbmknMfL-j4pFIYlTVhoIkUA9qRD7Xf5Nh_wpidafy5-Z1y9E2pBcZGBrDcxz1JeiNDsyuxfx-afz4l6EZ1DCAToHUAhPrK21hwJFj0-32-BCpg3cnxykz9mX-3Yg8sCJ-Ywwo_TJ2ktsdjpknHel3wXE11Izw9bz3t21E5yvw1VWsLTJi8b1KDDqWVTMHkS5fSIDsqLRlsUUFBs5qMSjICe6uG-9AvvOmzPQnm6SUM00wlK2FMEYABWikg-WF3n_T4UKA" />
+              </div>
+              <div className="absolute -bottom-10 -right-10 w-48 h-48 bg-white/40 backdrop-blur-xl rounded-full flex items-center justify-center p-8 text-center border border-white/60 hidden lg:flex">
+                <p className="font-headline-md text-headline-md text-primary leading-tight">Feito com <br />Intenção</p>
+              </div>
+            </div>
+            <div className="space-y-8 order-1 md:order-2">
+              <span className="font-label-md text-label-md text-secondary tracking-widest uppercase block">Nosso Manifesto</span>
+              <h2 className="font-display-lg text-display-lg-mobile md:text-headline-lg text-primary">História de Brilho</h2>
+              <div className="space-y-6">
+                <p className="font-body-lg text-body-lg text-on-surface-variant">Na May's Folheados, acreditamos que cada joia carrega uma memory. Fundada sob o desejo de unir a sofisticação da joalheria clássica com a leveza do design contemporâneo, nossas peças são pensadas para a mulher que valoriza o detalhe e o processo.</p>
+                <p className="font-body-lg text-body-lg text-on-surface-variant">
+                  Cada item é cuidadosamente folheado com múltiplas camadas de metais nobres, garantindo não apenas um brilho radiante, mas a durabilidade que uma peça eterna exige. Nosso compromisso é com a beleza que não se esforça, mas que se faz notar.
+                </p>
+              </div>
+              <button className="font-label-md text-label-md text-primary border-b border-primary/30 pb-1 hover:text-secondary hover:border-secondary transition-all">
+                Conheça nossos processos
+              </button>
+            </div>
+          </div>
+        </section>
+
+        {/* Newsletter Section */}
+        <section className="py-section-gap px-margin-mobile md:px-margin-desktop bg-surface">
+          <div className="max-w-3xl mx-auto text-center space-y-8">
+            <span className="material-symbols-outlined text-4xl text-secondary">auto_awesome</span>
+            <h2 className="font-headline-lg text-headline-lg text-primary">Junte-se à Nossa Curadoria</h2>
+            <p className="font-body-lg text-body-lg text-on-surface-variant">
+              Receba em primeira mão nossas coleções limitadas e dicas de como cuidar e estilizar suas joias artesanais.
+            </p>
+            <form className="flex flex-col md:flex-row gap-4 max-w-lg mx-auto pt-4" onSubmit={(e) => e.preventDefault()}>
+              <input className="flex-1 bg-white border-none border-b border-surface-variant focus:ring-0 focus:border-secondary px-6 py-4 rounded-full font-body-md placeholder-on-surface-variant/50 text-on-surface" placeholder="Seu e-mail favorito" type="email" />
+              <button className="bg-primary text-white px-10 py-4 rounded-full font-label-md text-label-md hover:bg-secondary transition-all active:scale-95 luxury-shadow">Inscrever</button>
+            </form>
+          </div>
+        </section>
       </main>
+
+      {/* Footer */}
+      <footer className="w-full py-section-gap px-margin-mobile md:px-margin-desktop grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter bg-surface-container-low border-t border-white/50">
+        <div className="flex flex-col gap-6">
+          <div className="font-headline-lg text-headline-lg text-primary">May's Folheados</div>
+          <p className="font-body-md text-body-md text-on-surface-variant">Elevando o cotidiano através de joias artesanais de luxo. Design consciente e brilho atemporal.</p>
+        </div>
+        <div className="flex flex-col gap-4">
+          <h4 className="font-label-md text-label-md text-primary font-bold uppercase tracking-wider">Explorar</h4>
+          <ul className="flex flex-col gap-2">
+            <li className=""><Link className="text-on-surface-variant hover:text-secondary transition-colors underline-offset-4 hover:underline" href="/products">Coleções</Link></li>
+            <li className=""><Link className="text-on-surface-variant hover:text-secondary transition-colors underline-offset-4 hover:underline" href="/products">Best Sellers</Link></li>
+            <li className=""><Link className="text-on-surface-variant hover:text-secondary transition-colors underline-offset-4 hover:underline" href="/products">Novidades</Link></li>
+            <li className=""><Link className="text-on-surface-variant hover:text-secondary transition-colors underline-offset-4 hover:underline" href="/products">Presentes</Link></li>
+          </ul>
+        </div>
+        <div className="flex flex-col gap-4">
+          <h4 className="font-label-md text-label-md text-primary font-bold uppercase tracking-wider">Suporte</h4>
+          <ul className="flex flex-col gap-2">
+            <li className=""><a className="text-on-surface-variant hover:text-secondary transition-colors underline-offset-4 hover:underline" href="#">Care Guide</a></li>
+            <li className=""><a className="text-on-surface-variant hover:text-secondary transition-colors underline-offset-4 hover:underline" href="#">Shipping &amp; Returns</a></li>
+            <li className=""><a className="text-on-surface-variant hover:text-secondary transition-colors underline-offset-4 hover:underline" href="#">FAQ</a></li>
+            <li className=""><a className="text-on-surface-variant hover:text-secondary transition-colors underline-offset-4 hover:underline" href="#">Privacy Policy</a></li>
+          </ul>
+        </div>
+        <div className="flex flex-col gap-4">
+          <h4 className="font-label-md text-label-md text-primary font-bold uppercase tracking-wider">Conectar</h4>
+          <div className="flex gap-4">
+            <a className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-primary luxury-shadow hover:scale-110 transition-transform" href="#">
+              <span className="material-symbols-outlined">share</span>
+            </a>
+            <a className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-primary luxury-shadow hover:scale-110 transition-transform" href="#">
+              <span className="material-symbols-outlined">mail</span>
+            </a>
+          </div>
+          <p className="font-label-sm text-label-sm text-on-surface-variant mt-4">© 2024 May's Folheados Joaillerie. Handcrafted with intention.</p>
+        </div>
+      </footer>
+
+      {/* Mobile Navigation */}
+      <nav className="fixed bottom-0 w-full z-50 flex justify-around items-center py-3 px-4 md:hidden bg-white/90 backdrop-blur-lg border-t border-surface-variant/30 shadow-[0_-4px_20px_rgba(166,113,132,0.08)] rounded-t-xl">
+        <Link href="/products" className="flex flex-col items-center justify-center bg-primary text-white rounded-full px-4 py-1 active:scale-90 transition-all">
+          <span className="material-symbols-outlined" data-icon="grid_view">grid_view</span>
+          <span className="font-label-sm text-label-sm">Boutique</span>
+        </Link>
+        <div className="flex flex-col items-center justify-center text-primary active:scale-90 transition-all">
+          <span className="material-symbols-outlined" data-icon="search">search</span>
+          <span className="font-label-sm text-label-sm">Search</span>
+        </div>
+        <div onClick={openCart} className="flex flex-col items-center justify-center text-primary active:scale-90 transition-all relative cursor-pointer">
+          <span className="material-symbols-outlined" data-icon="favorite">shopping_bag</span>
+          <span className="font-label-sm text-label-sm">Carrinho</span>
+          {cartCount > 0 && (
+            <span className="absolute top-1 right-2 bg-secondary text-white rounded-full w-4 h-4 flex items-center justify-center text-[9px] font-bold font-sans">
+              {cartCount}
+            </span>
+          )}
+        </div>
+        <div className="flex flex-col items-center justify-center text-primary active:scale-90 transition-all">
+          <span className="material-symbols-outlined" data-icon="person">person</span>
+          <span className="font-label-sm text-label-sm">Profile</span>
+        </div>
+      </nav>
+
+      {/* Contextual FAB */}
+      <button onClick={openCart} className="fixed right-6 bottom-24 md:bottom-10 z-40 w-16 h-16 bg-primary text-on-primary rounded-full luxury-shadow flex items-center justify-center group hover:scale-105 active:scale-90 transition-all relative">
+        <span className="material-symbols-outlined text-2xl" style={{ fontVariationSettings: "'FILL' 1" }}>shopping_bag</span>
+        {cartCount > 0 && (
+          <span className="absolute top-1 right-1 bg-secondary text-white rounded-full w-5 h-5 flex items-center justify-center text-[10px] font-bold font-sans">
+            {cartCount}
+          </span>
+        )}
+      </button>
     </div>
   );
 }

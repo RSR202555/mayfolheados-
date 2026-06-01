@@ -1,0 +1,542 @@
+[
+  {
+    "id": "1779988621144",
+    "name": "Pulseira Inicial  Ref.:PLA-001-Dourada",
+    "price": 35,
+    "image": "/produtos/1779988621143-jupmd3.jpeg",
+    "category": "Pulseiras",
+    "isNew": false,
+    "isBestSeller": false
+  },
+  {
+    "id": "1779988705991",
+    "name": "Pulseira Nossa Senhora Elos  Ref:PLA-002- Dourada",
+    "price": 40,
+    "image": "/produtos/1779988705990-4agcnk.jpeg",
+    "category": "Pulseiras",
+    "isNew": false,
+    "isBestSeller": false
+  },
+  {
+    "id": "1779988753582",
+    "name": "‎Pulseira STRASS REF: PLA-004-D",
+    "price": 40,
+    "image": "/produtos/1779988753581-d46h5r.jpeg",
+    "category": "Pulseiras",
+    "isNew": false,
+    "isBestSeller": false
+  },
+  {
+    "id": "1779988806058",
+    "name": "‎Pulseira Cordão Baiano Coração Madrepérola REF: PLA-003-D",
+    "price": 24,
+    "image": "/produtos/1779988806057-cg1ijc.jpeg",
+    "category": "Pulseiras",
+    "isNew": false,
+    "isBestSeller": false
+  },
+  {
+    "id": "1779988915039",
+    "name": "‎Pulseira Venerziama REF: PLA-005- D",
+    "price": 34.9,
+    "image": "/produtos/1779988915034-o0rs74.jpeg",
+    "category": "Pulseiras",
+    "isNew": false,
+    "isBestSeller": false
+  },
+  {
+    "id": "1779988973537",
+    "name": "‎Pulseira Veneziana Quad REF: PLA-006- D",
+    "price": 24.9,
+    "image": "/produtos/1779988973537-s3fma7.jpeg",
+    "category": "Pulseiras",
+    "isNew": false,
+    "isBestSeller": false
+  },
+  {
+    "id": "1779989028601",
+    "name": "‎Pulseira Venerziana  REF: PLA-007-D",
+    "price": 24.9,
+    "image": "/produtos/1779989028600-x4uzqs.jpeg",
+    "category": "Pulseiras",
+    "isNew": false,
+    "isBestSeller": false
+  },
+  {
+    "id": "1779989105001",
+    "name": "‎Pulseira Família  REF: PLA-008-D",
+    "price": 29.9,
+    "image": "/produtos/1779989105000-gw9460.jpeg",
+    "category": "Pulseiras",
+    "isNew": false,
+    "isBestSeller": false
+  },
+  {
+    "id": "1779989165703",
+    "name": "Pulseira Elo Português Com Inicial  REF: PLA-009-D",
+    "price": 29.9,
+    "image": "/produtos/1779989165702-h2pnxd.jpeg",
+    "category": "Pulseiras",
+    "isNew": false,
+    "isBestSeller": false
+  },
+  {
+    "id": "1779989222424",
+    "name": "Pulseira Elos Com Strass REF: PLA-010-D",
+    "price": 24.9,
+    "image": "/produtos/1779989222423-r6etis.jpeg",
+    "category": "Pulseiras",
+    "isNew": false,
+    "isBestSeller": false
+  },
+  {
+    "id": "1779989298195",
+    "name": "Pulseira Malha REF: PLA-0011-D",
+    "price": 49.99,
+    "image": "/produtos/1779989298194-ts5c9v.jpeg",
+    "category": "Pulseiras",
+    "isNew": false,
+    "isBestSeller": false
+  },
+  {
+    "id": "1779989379833",
+    "name": "‎Pulseira Curb Com Inicial  REF: PLA-0012-D",
+    "price": 29,
+    "image": "/produtos/1779989379832-hvtrsa.jpeg",
+    "category": "Pulseiras",
+    "isNew": false,
+    "isBestSeller": false
+  },
+  {
+    "id": "1779989436181",
+    "name": "‎Pulseira Elo Português Com Inicial  REF: PLA-0013-D",
+    "price": 24.99,
+    "image": "/produtos/1779989436180-8akz5w.jpeg",
+    "category": "Pulseiras",
+    "isNew": false,
+    "isBestSeller": false
+  },
+  {
+    "id": "1779989488290",
+    "name": "‎Pulseira Curb  REF: PLA-0014-D",
+    "price": 24.99,
+    "image": "/produtos/1779989488289-h0ysfr.jpeg",
+    "category": "Pulseiras",
+    "isNew": false,
+    "isBestSeller": false
+  },
+  {
+    "id": "1779989563802",
+    "name": "‎Pulseira Elo Português Com Coração Esmaltado",
+    "price": 49.99,
+    "image": "/produtos/1779989563801-ck5ryf.jpeg",
+    "category": "Pulseiras",
+    "isNew": false,
+    "isBestSeller": false
+  },
+  {
+    "id": "1779989634059",
+    "name": "‎Pulseira Cruz  REF: PLA-0016-D",
+    "price": 34.99,
+    "image": "/produtos/1779989634058-2blsuh.jpeg",
+    "category": "Pulseiras",
+    "isNew": false,
+    "isBestSeller": false
+  },
+  {
+    "id": "1779989705280",
+    "name": "‎Pulseira Venerziana Gratidão  REF: PLA-0017-D",
+    "price": 39.9,
+    "image": "/produtos/1779989705279-bsxlra.jpg",
+    "category": "Pulseiras",
+    "isNew": false,
+    "isBestSeller": false
+  },
+  {
+    "id": "1779989778068",
+    "name": "‎Pulseira Elo Português Com Ponto De Luz  REF: PLA-0018-D",
+    "price": 24.99,
+    "image": "/produtos/1779989778066-xzw5xt.jpg",
+    "category": "Pulseiras",
+    "isNew": false,
+    "isBestSeller": false
+  },
+  {
+    "id": "1779989831835",
+    "name": "‎Pulseira Pérola Com Inicial  REF: PLA-0019-D",
+    "price": 15.99,
+    "image": "/produtos/1779989831833-8m8ttr.jpeg",
+    "category": "Pulseiras",
+    "isNew": false,
+    "isBestSeller": false
+  },
+  {
+    "id": "1779989878235",
+    "name": "‎Pulseira Pandora  4 Bertoques REF: PLA-0011-D",
+    "price": 49.99,
+    "image": "/produtos/1779989878234-u2yvqi.jpeg",
+    "category": "Pulseiras",
+    "isNew": false,
+    "isBestSeller": false
+  },
+  {
+    "id": "1779989925715",
+    "name": "‎Pulseira Infantil Com Gravação  REF: PLI-0001-D",
+    "price": 49.99,
+    "image": "/produtos/1779989925714-tnnno4.jpeg",
+    "category": "Pulseiras",
+    "isNew": false,
+    "isBestSeller": false
+  },
+  {
+    "id": "1779989991449",
+    "name": "‎Pulseira Infantil Com Gravação  REF: PLI- 0002-D",
+    "price": 54.99,
+    "image": "/produtos/1779989991448-opuruv.jpeg",
+    "category": "Pulseiras",
+    "isNew": false,
+    "isBestSeller": false
+  },
+  {
+    "id": "1779990029053",
+    "name": "‎Pulseira Infantil Com Gravação  REF: PLA-0003-D",
+    "price": 54.99,
+    "image": "/produtos/1779990029052-r2y7ns.jpeg",
+    "category": "Pulseiras",
+    "isNew": false,
+    "isBestSeller": false
+  },
+  {
+    "id": "1779990114809",
+    "name": "‎Pulseira Infantil Com Gravação  REF: PLI- 0004-D",
+    "price": 54,
+    "image": "/produtos/1779990114807-btl6xw.jpeg",
+    "category": "Pulseiras",
+    "isNew": false,
+    "isBestSeller": false
+  },
+  {
+    "id": "1779990176431",
+    "name": "‎Relicário Arvore Da Vida G C/ Foto REF: RL- 0001D",
+    "price": 99,
+    "image": "/produtos/1779990176430-yn5pa8.jfif",
+    "category": "Pulseiras",
+    "isNew": false,
+    "isBestSeller": false
+  },
+  {
+    "id": "1779990217684",
+    "name": "‎Relicário Coração Frente e Verso C/Foto REF: RL- 0002D",
+    "price": 110,
+    "image": "/produtos/1779990217683-u8etuq.jpeg",
+    "category": "Pulseiras",
+    "isNew": false,
+    "isBestSeller": false
+  },
+  {
+    "id": "1779990271986",
+    "name": "‎Relicário Mandala  REF: RL- 0003D",
+    "price": 90,
+    "image": "/produtos/1779990271985-931i4d.jpeg",
+    "category": "Pulseiras",
+    "isNew": false,
+    "isBestSeller": false
+  },
+  {
+    "id": "1779990353729",
+    "name": "‎Relicário Mandala C/ Foto REF: RL- 0003D",
+    "price": 110,
+    "image": "/produtos/1779990353728-opnp30.jpeg",
+    "category": "Pulseiras",
+    "isNew": false,
+    "isBestSeller": false
+  },
+  {
+    "id": "1779990749509",
+    "name": "Relicário Com Gravação + Foto REF: RL- 0004D",
+    "price": 125,
+    "image": "/produtos/1779990749508-nnchoy.jpeg",
+    "category": "Pulseiras",
+    "isNew": false,
+    "isBestSeller": false
+  },
+  {
+    "id": "1780317548382",
+    "name": "Bracelete Gotas BRD007- D",
+    "price": 74.99,
+    "image": "/produtos/1780317548368-02d4hu.jfif",
+    "category": "Braceletes",
+    "isNew": false,
+    "isBestSeller": false
+  },
+  {
+    "id": "1780317586923",
+    "name": "Bracelete Coração BR 0001D",
+    "price": 48,
+    "image": "/produtos/1780317586920-v52g9g.jfif",
+    "category": "Braceletes",
+    "isNew": false,
+    "isBestSeller": false
+  },
+  {
+    "id": "1780317641460",
+    "name": "Bracelete ELEGANCE  BRD002 D",
+    "price": 78.99,
+    "image": "/produtos/1780317641459-9yqxpp.jfif",
+    "category": "Braceletes",
+    "isNew": false,
+    "isBestSeller": false
+  },
+  {
+    "id": "1780317675806",
+    "name": "Bracelete BRILHUS BRD003- D",
+    "price": 75,
+    "image": "/produtos/1780317675805-nd8owx.jfif",
+    "category": "Braceletes",
+    "isNew": false,
+    "isBestSeller": false
+  },
+  {
+    "id": "1780317770210",
+    "name": "Bracelete GRATIDÃO BRD004 - D",
+    "price": 49.99,
+    "image": "/produtos/1780317770209-2da0ua.jfif",
+    "category": "Braceletes",
+    "isNew": false,
+    "isBestSeller": false
+  },
+  {
+    "id": "1780317844756",
+    "name": "Bracelete PREGO BRD005- D",
+    "price": 84.99,
+    "image": "/produtos/1780317844756-dyc91v.jfif",
+    "category": "Braceletes",
+    "isNew": false,
+    "isBestSeller": false
+  },
+  {
+    "id": "1780317878919",
+    "name": "Bracelete antebraço BRD006- D",
+    "price": 69.99,
+    "image": "/produtos/1780317878918-ihfya9.jfif",
+    "category": "Braceletes",
+    "isNew": false,
+    "isBestSeller": false
+  },
+  {
+    "id": "1780317924129",
+    "name": " Bracelete no dourado BRD003- D",
+    "price": 46,
+    "image": "/produtos/1780317924128-fv2dgf.jfif",
+    "category": "Braceletes",
+    "isNew": false,
+    "isBestSeller": false
+  },
+  {
+    "id": "1780317975498",
+    "name": "Bracelete Elen BRD009D",
+    "price": 39.99,
+    "image": "/produtos/1780317975498-64x7hw.jfif",
+    "category": "Braceletes",
+    "isNew": false,
+    "isBestSeller": false
+  },
+  {
+    "id": "1780318006357",
+    "name": "Bracelete elos BRD0010- D",
+    "price": 54.99,
+    "image": "/produtos/1780318006356-vn79qz.jfif",
+    "category": "Braceletes",
+    "isNew": false,
+    "isBestSeller": false
+  },
+  {
+    "id": "1780318061961",
+    "name": "Bracelete Prata 925 BRP0001",
+    "price": 54.99,
+    "image": "/produtos/1780318061960-ebhqg3.jfif",
+    "category": "Braceletes",
+    "isNew": false,
+    "isBestSeller": false
+  },
+  {
+    "id": "1780318105033",
+    "name": "Bracelete Elos      BRP0002",
+    "price": 54.99,
+    "image": "/produtos/1780318105032-rbu6rc.jpeg",
+    "category": "Braceletes",
+    "isNew": false,
+    "isBestSeller": false
+  },
+  {
+    "id": "1780318140154",
+    "name": "Bracelete Prata 925 BRP0003",
+    "price": 54.99,
+    "image": "/produtos/1780318140153-zayfv6.jfif",
+    "category": "Braceletes",
+    "isNew": false,
+    "isBestSeller": false
+  },
+  {
+    "id": "1780318188806",
+    "name": "Pulseira Baby Prata 925 C/ Gravação  REF: PLIP- 0001",
+    "price": 74.99,
+    "image": "/produtos/1780318188804-fpfxe2.jpeg",
+    "category": "Pulseiras",
+    "isNew": false,
+    "isBestSeller": false
+  },
+  {
+    "id": "1780318235165",
+    "name": "Pulseira Prata 925 Baby  REF: PLIP- 0002",
+    "price": 74.99,
+    "image": "/produtos/1780318235164-2vq0pq.jpeg",
+    "category": "Pulseiras",
+    "isNew": false,
+    "isBestSeller": false
+  },
+  {
+    "id": "1780318411895",
+    "name": "Pulseira Prata 925 Baby Menino REF: PLIP 0003",
+    "price": 74.99,
+    "image": "/produtos/1780318411880-nr2n1s.jfif",
+    "category": "Pulseiras",
+    "isNew": false,
+    "isBestSeller": false
+  },
+  {
+    "id": "1780318696832",
+    "name": "Corrente Manda Personalizada Ref:COR-0001",
+    "price": 90,
+    "image": "/produtos/1780318696831-nf9q1v.jfif",
+    "category": "Correntes",
+    "isNew": false,
+    "isBestSeller": false
+  },
+  {
+    "id": "1780318737488",
+    "name": "Corrente Coração Gravado  Ref:COR-0002",
+    "price": 54.99,
+    "image": "/produtos/1780318737488-ju3q4l.jfif",
+    "category": "Correntes",
+    "isNew": false,
+    "isBestSeller": false
+  },
+  {
+    "id": "1780318776931",
+    "name": "Corrente Foto Personalizada Ref:COR-0002",
+    "price": 180,
+    "image": "/produtos/1780318776929-m76r6s.jfif",
+    "category": "Correntes",
+    "isNew": false,
+    "isBestSeller": false
+  },
+  {
+    "id": "1780318819509",
+    "name": "Corrente Gravata Rosa Ref:COR-0003",
+    "price": 44.99,
+    "image": "/produtos/1780318819509-fup4ji.jfif",
+    "category": "Correntes",
+    "isNew": false,
+    "isBestSeller": false
+  },
+  {
+    "id": "1780319116855",
+    "name": "Corrente Com Inicial  Ref:COR-0005  ",
+    "price": 34.99,
+    "image": "/produtos/1780319116854-kleq1d.jfif",
+    "category": "Correntes",
+    "isNew": false,
+    "isBestSeller": false
+  },
+  {
+    "id": "1780319161865",
+    "name": "Corrente Elos Filhos Ref:COR-0005",
+    "price": 65,
+    "image": "/produtos/1780319161864-2n8dlb.jfif",
+    "category": "Correntes",
+    "isNew": false,
+    "isBestSeller": false
+  },
+  {
+    "id": "1780319217465",
+    "name": "Corrente Venerziana Filhos Pérola  Ref:COR-0006",
+    "price": 90,
+    "image": "/produtos/1780319217464-7mb8ig.jfif",
+    "category": "Correntes",
+    "isNew": false,
+    "isBestSeller": false
+  },
+  {
+    "id": "1780319283247",
+    "name": "Corrente Malha inicial Ref:COR-0007",
+    "price": 39.99,
+    "image": "/produtos/1780319283246-wfsnco.jfif",
+    "category": "Correntes",
+    "isNew": false,
+    "isBestSeller": false
+  },
+  {
+    "id": "1780319814604",
+    "name": "Corrente Elos Cruz  Ref:COR-0010",
+    "price": 49.99,
+    "image": "/produtos/1780319814603-p8ekbh.jfif",
+    "category": "Correntes",
+    "isNew": false,
+    "isBestSeller": false
+  },
+  {
+    "id": "1780319855958",
+    "name": "Choker Borboleta  Ref:COR-0011",
+    "price": 49.99,
+    "image": "/produtos/1780319885715-xuw8tn.jpeg",
+    "category": "Correntes",
+    "isNew": false,
+    "isBestSeller": false
+  },
+  {
+    "id": "1780319936476",
+    "name": "Corrente Veneziana Pai Nosso  Ref:COR-0012",
+    "price": 64.99,
+    "image": "/produtos/1780319936476-qk4xt8.jfif",
+    "category": "Correntes",
+    "isNew": false,
+    "isBestSeller": false
+  },
+  {
+    "id": "1780319966423",
+    "name": "Corrente Elos Com Inicial  Ref.:    COR-0013",
+    "price": 54.99,
+    "image": "/produtos/1780319966422-v61g15.jfif",
+    "category": "Correntes",
+    "isNew": false,
+    "isBestSeller": false
+  },
+  {
+    "id": "1780320001359",
+    "name": "Corrente Venerziana COM FILHOS PÉROLA  Ref:COR-0014",
+    "price": 69.99,
+    "image": "/produtos/1780320001358-m380zw.jfif",
+    "category": "Correntes",
+    "isNew": false,
+    "isBestSeller": false
+  },
+  {
+    "id": "1780320037715",
+    "name": "Choker Ondas Ref:Chk D -0001",
+    "price": 65,
+    "image": "/produtos/1780320037713-vr7fs7.jpeg",
+    "category": "Correntes",
+    "isNew": false,
+    "isBestSeller": false
+  },
+  {
+    "id": "1780320064691",
+    "name": "Choker Larg Dourada Ref:CHK 0002",
+    "price": 69.99,
+    "image": "/produtos/1780320064688-rvvfc2.jfif",
+    "category": "Correntes",
+    "isNew": false,
+    "isBestSeller": false
+  }
+]
