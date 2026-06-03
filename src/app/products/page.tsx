@@ -92,7 +92,7 @@ export default function ProductsPage() {
           </div>
         </div>
         <Link href="/" className="font-display-lg text-headline-lg-mobile md:text-display-lg text-primary tracking-tighter absolute left-1/2 -translate-x-1/2 hover:opacity-85 transition-opacity flex items-center gap-2 md:gap-3 whitespace-nowrap">
-          <img src="/logo_rosa_may.png" alt="MAY'S Logo" className="h-10 w-10 md:h-12 md:w-12 rounded-full object-cover border border-secondary/20" />
+          <img src="/logo_rosa_may.png" alt="MAY'S Logo" className={`rounded-full object-cover border border-secondary/20 transition-all duration-300 ${scrolled ? 'h-11 w-11' : 'h-14 w-14 md:h-16 md:w-16'}`} />
           <span className="hidden sm:block">MAY'S Joias & Acessórios</span>
           <span className="sm:hidden">MAY'S</span>
         </Link>

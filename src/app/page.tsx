@@ -119,7 +119,7 @@ export default function Home() {
         </div>
         <div className="flex items-center">
           <Link href="/" className="flex items-center gap-3 hover:opacity-90 transition-opacity">
-            <img src="/logo_rosa_may.png" alt="MAY'S Logo" className="h-10 w-10 md:h-12 md:w-12 rounded-full object-cover border border-secondary/20" />
+            <img src="/logo_rosa_may.png" alt="MAY'S Logo" className="h-14 w-14 md:h-16 md:w-16 rounded-full object-cover border border-secondary/20 transition-all duration-300" />
             <span className="font-display-lg text-display-lg-mobile md:text-display-lg text-primary tracking-tighter hidden sm:block">
               MAY'S Joias & Acessórios
             </span>
