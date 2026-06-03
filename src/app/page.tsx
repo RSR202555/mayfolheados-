@@ -4,8 +4,43 @@ import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { useCart } from '@/context/CartContext';
 
+interface Product {
+  id: string;
+  name: string;
+  price: number;
+  image: string;
+  category: string;
+  isNew?: boolean;
+  isBestSeller?: boolean;
+}
+
+const DEFAULT_FEATURED: Product[] = [
+  {
+    id: 'h1',
+    name: 'Colar Gota de Luz',
+    price: 189.00,
+    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDMqQVbX2eG2YwwUYZBxcMFwcx0gYknzEayB034ly1uPddy_Kk0XStaKewdm4h6MKRfZDBmUuRtiv2i8CAQHbPEeUjhbb8tVxd0Js9pCTjegselm5N62blgL98rwYbR5nurodDzssI40kSuNqaKybfsq6O3LgGb7z6aIqscM5PleEbZ4A19pXdvcRJnKbVqOI4MhZ-w49D6by1oZegJhB0gzdxD9UfjlXGkvou6ZR7TVquuHAyhJtZ76agaX60rWesM3MdY5HIr5q4',
+    category: 'Colares'
+  },
+  {
+    id: 'h2',
+    name: 'Anel Elo Infinito',
+    price: 124.00,
+    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDBgAYszmUe15O62AfYTszLAtjxxAvW4QuijIN3HZD05vm-6orKm6gA4VZxtnwfBLxro7X1pCrriYhV-wOd4EcrtWElvLxXdhejImmBPGY416MKL9RFFW0xjah5rg0Yyuok7AQ3s9Mqv3yF4imhyfHi3KDD0RJj6s0XamGLyGnUOOeUv4Y-yufs0YRWaYVM-XbYtsvKyEkCppndqcS7ewabptG52UsBaGRIb6aaofe3-aKiK6FkXWP3EmlWx9rC4oFNKW9WKl-GMn4',
+    category: 'Anéis'
+  },
+  {
+    id: 'h3',
+    name: 'Brincos Aurora',
+    price: 156.00,
+    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAWW_3MYqeHFVNXK1Bvytv68tv1pfsPc7EDeVgDn_YfYGmTe6q0M8ScYbeErDi7FQ6uUD3MkfN_MN3Tj-Hi71BC1oA8isPcTrteXO8Kco3vPZB4pq4HN-39Vaz3YrDXURmNHpISatPW5Eb0piXTojFS7w4KePLu3Ve1JslMNh1--QxexFo0qg7EfYMkq1WlwWnwELdD2oI_gCj-c9GRDf31ehpSJoj95WT0sS13CBt5CKDk8CzpoQflxjbuIb1KMcduy9XXaS9yJeY',
+    category: 'Brincos'
+  }
+];
+
 export default function Home() {
   const [scrolled, setScrolled] = useState(false);
+  const [featuredProducts, setFeaturedProducts] = useState<Product[]>(DEFAULT_FEATURED);
   const { addToCart, openCart, cartCount } = useCart();
 
   useEffect(() => {
@@ -17,7 +52,37 @@ export default function Home() {
       }
     };
 
+    const fetchFeaturedProducts = async () => {
+      try {
+        const res = await fetch('/api/products');
+        if (res.ok) {
+          const data: Product[] = await res.json();
+          // Filter products that are best sellers (Destaques)
+          let filtered = data.filter(p => p.isBestSeller);
+          
+          // If less than 3 best sellers, fill with other products from database
+          if (filtered.length < 3) {
+            const others = data.filter(p => !p.isBestSeller);
+            filtered = [...filtered, ...others].slice(0, 3);
+          }
+          
+          // If we got products, update the state, otherwise fallback to defaults
+          if (filtered.length > 0) {
+            const padded = [...filtered];
+            while (padded.length < 3) {
+              const fallbackItem = DEFAULT_FEATURED[padded.length];
+              padded.push(fallbackItem);
+            }
+            setFeaturedProducts(padded);
+          }
+        }
+      } catch (err) {
+        console.error('Error fetching featured products:', err);
+      }
+    };
+
     window.addEventListener('scroll', handleScroll);
+    fetchFeaturedProducts();
 
     // Intersection Observer for fade-in animations
     const observerOptions = {
@@ -44,30 +109,6 @@ export default function Home() {
       sections.forEach(section => observer.unobserve(section));
     };
   }, []);
-
-  const featuredProducts = [
-    {
-      id: 'h1',
-      name: 'Colar Gota de Luz',
-      price: 189.00,
-      image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDMqQVbX2eG2YwwUYZBxcMFwcx0gYknzEayB034ly1uPddy_Kk0XStaKewdm4h6MKRfZDBmUuRtiv2i8CAQHbPEeUjhbb8tVxd0Js9pCTjegselm5N62blgL98rwYbR5nurodDzssI40kSuNqaKybfsq6O3LgGb7z6aIqscM5PleEbZ4A19pXdvcRJnKbVqOI4MhZ-w49D6by1oZegJhB0gzdxD9UfjlXGkvou6ZR7TVquuHAyhJtZ76agaX60rWesM3MdY5HIr5q4',
-      category: 'Colares'
-    },
-    {
-      id: 'h2',
-      name: 'Anel Elo Infinito',
-      price: 124.00,
-      image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDBgAYszmUe15O62AfYTszLAtjxxAvW4QuijIN3HZD05vm-6orKm6gA4VZxtnwfBLxro7X1pCrriYhV-wOd4EcrtWElvLxXdhejImmBPGY416MKL9RFFW0xjah5rg0Yyuok7AQ3s9Mqv3yF4imhyfHi3KDD0RJj6s0XamGLyGnUOOeUv4Y-yufs0YRWaYVM-XbYtsvKyEkCppndqcS7ewabptG52UsBaGRIb6aaofe3-aKiK6FkXWP3EmlWx9rC4oFNKW9WKl-GMn4',
-      category: 'Anéis'
-    },
-    {
-      id: 'h3',
-      name: 'Brincos Aurora',
-      price: 156.00,
-      image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAWW_3MYqeHFVNXK1Bvytv68tv1pfsPc7EDeVgDn_YfYGmTe6q0M8ScYbeErDi7FQ6uUD3MkfN_MN3Tj-Hi71BC1oA8isPcTrteXO8Kco3vPZB4pq4HN-39Vaz3YrDXURmNHpISatPW5Eb0piXTojFS7w4KePLu3Ve1JslMNh1--QxexFo0qg7EfYMkq1WlwWnwELdD2oI_gCj-c9GRDf31ehpSJoj95WT0sS13CBt5CKDk8CzpoQflxjbuIb1KMcduy9XXaS9yJeY',
-      category: 'Brincos'
-    }
-  ];
 
   return (
     <div className="bg-background text-on-surface font-body-md min-h-screen flex flex-col">
