@@ -4,7 +4,7 @@ import { CartProvider } from "@/context/CartContext";
 import CartDrawer from "@/components/CartDrawer";
 
 export const metadata: Metadata = {
-  title: "May's Folheados | Semijoias de Luxo",
+  title: "MAY'S Joias & Acessórios | Semijoias de Luxo",
   description: "Joias banhadas a ouro com acabamento artesanal, desenhadas para elevar a sua essência com um brilho atemporal e delicado.",
 };
 

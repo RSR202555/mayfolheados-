@@ -118,7 +118,7 @@ export default function Home() {
           <span className="material-symbols-outlined">menu</span>
         </div>
         <div className="font-display-lg text-display-lg-mobile md:text-display-lg text-primary tracking-tighter">
-          <Link href="/">May's Folheados</Link>
+          <Link href="/">MAY'S Joias & Acessórios</Link>
         </div>
         <div className="flex items-center gap-6">
           <div className="hidden md:flex gap-8">
@@ -297,7 +297,7 @@ export default function Home() {
               <span className="font-label-md text-label-md text-secondary tracking-widest uppercase block">Nosso Manifesto</span>
               <h2 className="font-display-lg text-display-lg-mobile md:text-headline-lg text-primary">História de Brilho</h2>
               <div className="space-y-6">
-                <p className="font-body-lg text-body-lg text-on-surface-variant">Na May's Folheados, acreditamos que cada joia carrega uma memory. Fundada sob o desejo de unir a sofisticação da joalheria clássica com a leveza do design contemporâneo, nossas peças são pensadas para a mulher que valoriza o detalhe e o processo.</p>
+                <p className="font-body-lg text-body-lg text-on-surface-variant">Na MAY'S Joias & Acessórios, acreditamos que cada joia carrega uma memory. Fundada sob o desejo de unir a sofisticação da joalheria clássica com a leveza do design contemporâneo, nossas peças são pensadas para a mulher que valoriza o detalhe e o processo.</p>
                 <p className="font-body-lg text-body-lg text-on-surface-variant">
                   Cada item é cuidadosamente folheado com múltiplas camadas de metais nobres, garantindo não apenas um brilho radiante, mas a durabilidade que uma peça eterna exige. Nosso compromisso é com a beleza que não se esforça, mas que se faz notar.
                 </p>
@@ -328,7 +328,7 @@ export default function Home() {
       {/* Footer */}
       <footer className="w-full py-section-gap px-margin-mobile md:px-margin-desktop grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter bg-surface-container-low border-t border-white/50">
         <div className="flex flex-col gap-6">
-          <div className="font-headline-lg text-headline-lg text-primary">May's Folheados</div>
+          <div className="font-headline-lg text-headline-lg text-primary">MAY'S Joias & Acessórios</div>
           <p className="font-body-md text-body-md text-on-surface-variant">Elevando o cotidiano através de joias artesanais de luxo. Design consciente e brilho atemporal.</p>
         </div>
         <div className="flex flex-col gap-4">
@@ -359,7 +359,7 @@ export default function Home() {
               <span className="material-symbols-outlined">mail</span>
             </a>
           </div>
-          <p className="font-label-sm text-label-sm text-on-surface-variant mt-4">© 2024 May's Folheados Joaillerie. Handcrafted with intention.</p>
+          <p className="font-label-sm text-label-sm text-on-surface-variant mt-4">© 2024 MAY'S Joias & Acessórios. Handcrafted with intention.</p>
         </div>
       </footer>
 

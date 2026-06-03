@@ -92,7 +92,7 @@ export default function ProductsPage() {
           </div>
         </div>
         <Link href="/" className="font-display-lg text-headline-lg-mobile md:text-display-lg text-primary tracking-tighter absolute left-1/2 -translate-x-1/2 hover:opacity-85 transition-opacity">
-          May's Folheados
+          MAY'S Joias & Acessórios
         </Link>
         <div className="flex items-center gap-6">
           <span className="material-symbols-outlined text-primary cursor-pointer active:scale-95 transition-transform hidden md:block" data-icon="search">search</span>
@@ -237,7 +237,7 @@ export default function ProductsPage() {
       {/* Footer */}
       <footer className="w-full py-section-gap px-margin-mobile md:px-margin-desktop grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter bg-surface-container-high border-t border-primary/5">
         <div>
-          <h4 className="font-headline-lg text-headline-lg text-primary mb-6">May's Folheados</h4>
+          <h4 className="font-headline-lg text-headline-lg text-primary mb-6">MAY'S Joias & Acessórios</h4>
           <p className="font-body-md text-body-md text-on-surface-variant mb-6">Transformando momentos em eternidade através de joias folheadas com alma e design exclusivo.</p>
           <div className="flex gap-4">
             <span className="material-symbols-outlined text-primary cursor-pointer hover:text-secondary transition-colors" data-icon="brand_awareness">brand_awareness</span>
@@ -274,7 +274,7 @@ export default function ProductsPage() {
           </div>
         </div>
         <div className="lg:col-span-4 pt-12 mt-12 border-t border-primary/10 text-center">
-          <p className="font-body-md text-body-md text-on-surface-variant">© 2024 May's Folheados Joaillerie. Handcrafted with intention.</p>
+          <p className="font-body-md text-body-md text-on-surface-variant">© 2024 MAY'S Joias & Acessórios. Handcrafted with intention.</p>
         </div>
       </footer>
     </div>
