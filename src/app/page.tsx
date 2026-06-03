@@ -119,12 +119,12 @@ export default function Home() {
         </div>
         <div className="flex items-center">
           <Link href="/" className="flex items-center gap-3 hover:opacity-90 transition-opacity">
-            <img src="/logo_rosa_may.png" alt="MAY'S Logo" className="h-14 w-14 md:h-16 md:w-16 rounded-full object-cover border border-secondary/20 transition-all duration-300" />
+            <img src="/logo_rosa_may.png" alt="may's logo" className="h-14 w-14 md:h-16 md:w-16 rounded-full object-cover border border-secondary/20 transition-all duration-300" />
             <span className="font-display-lg text-display-lg-mobile md:text-display-lg text-primary tracking-tighter hidden sm:block">
-              MAY'S Joias & Acessórios
+              may's joias & acessórios
             </span>
             <span className="font-display-lg text-display-lg-mobile text-primary tracking-tighter sm:hidden">
-              MAY'S
+              may's
             </span>
           </Link>
         </div>
@@ -320,7 +320,7 @@ export default function Home() {
       {/* Footer */}
       <footer className="w-full py-section-gap px-margin-mobile md:px-margin-desktop grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter bg-surface-container-low border-t border-white/50">
         <div className="flex flex-col gap-6">
-          <div className="font-headline-lg text-headline-lg text-primary">MAY'S Joias & Acessórios</div>
+          <div className="font-headline-lg text-headline-lg text-primary">may's joias & acessórios</div>
           <p className="font-body-md text-body-md text-on-surface-variant">Elevando o cotidiano através de joias artesanais de luxo. Design consciente e brilho atemporal.</p>
         </div>
         <div className="flex flex-col gap-4">
@@ -358,7 +358,7 @@ export default function Home() {
               </svg>
             </a>
           </div>
-          <p className="font-label-sm text-label-sm text-on-surface-variant mt-4">© 2024 MAY'S Joias & Acessórios. Handcrafted with intention.</p>
+          <p className="font-label-sm text-label-sm text-on-surface-variant mt-4">© 2024 may's joias & acessórios. Handcrafted with intention.</p>
         </div>
       </footer>
 

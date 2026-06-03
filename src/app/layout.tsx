@@ -5,19 +5,19 @@ import CartDrawer from "@/components/CartDrawer";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://mayfolheados-topaz.vercel.app"),
-  title: "MAY'S Joias & Acessórios | Semijoias de Luxo",
+  title: "may's joias & acessórios | semijoias de luxo",
   description: "Joias banhadas a ouro com acabamento artesanal, desenhadas para elevar a sua essência com um brilho atemporal e delicado.",
   openGraph: {
-    title: "MAY'S Joias & Acessórios | Semijoias de Luxo",
+    title: "may's joias & acessórios | semijoias de luxo",
     description: "Joias banhadas a ouro com acabamento artesanal, desenhadas para elevar a sua essência com um brilho atemporal e delicado.",
     url: "https://mayfolheados-topaz.vercel.app",
-    siteName: "MAY'S Joias & Acessórios",
+    siteName: "may's joias & acessórios",
     images: [
       {
         url: "/logo_rosa_may.png",
         width: 800,
         height: 800,
-        alt: "MAY'S Joias & Acessórios Logo",
+        alt: "may's joias & acessórios logo",
       },
     ],
     locale: "pt_BR",

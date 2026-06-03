@@ -44,7 +44,7 @@ export default function AdminLoginPage() {
       {/* Navbar Simple */}
       <header className="w-full flex justify-between items-center px-6 md:px-12 h-20 bg-white/40 backdrop-blur-md border-b border-[#d2c3c4]/10">
         <Link href="/" className="font-display-lg text-xl text-[#70585b] tracking-tighter hover:opacity-85 transition-opacity">
-          MAY'S Joias & Acessórios
+          may's joias & acessórios
         </Link>
         <Link href="/" className="text-xs uppercase tracking-widest text-[#775a19] font-semibold hover:opacity-85 transition-opacity">
           Voltar à Loja
@@ -121,7 +121,7 @@ export default function AdminLoginPage() {
 
       {/* Footer Simple */}
       <footer className="w-full py-6 text-center text-xs text-[#4f4445]/60 border-t border-[#d2c3c4]/10 bg-white/20">
-        © 2024 MAY'S Joias & Acessórios. Área de acesso exclusiva.
+        © 2024 may's joias & acessórios. Área de acesso exclusiva.
       </footer>
     </div>
   );

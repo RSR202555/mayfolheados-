@@ -92,9 +92,9 @@ export default function ProductsPage() {
           </div>
         </div>
         <Link href="/" className="font-display-lg text-headline-lg-mobile md:text-display-lg text-primary tracking-tighter absolute left-1/2 -translate-x-1/2 hover:opacity-85 transition-opacity flex items-center gap-2 md:gap-3 whitespace-nowrap">
-          <img src="/logo_rosa_may.png" alt="MAY'S Logo" className={`rounded-full object-cover border border-secondary/20 transition-all duration-300 ${scrolled ? 'h-11 w-11' : 'h-14 w-14 md:h-16 md:w-16'}`} />
-          <span className="hidden sm:block">MAY'S Joias & Acessórios</span>
-          <span className="sm:hidden">MAY'S</span>
+          <img src="/logo_rosa_may.png" alt="may's logo" className={`rounded-full object-cover border border-secondary/20 transition-all duration-300 ${scrolled ? 'h-11 w-11' : 'h-14 w-14 md:h-16 md:w-16'}`} />
+          <span className="hidden sm:block">may's joias & acessórios</span>
+          <span className="sm:hidden">may's</span>
         </Link>
         <div className="flex items-center gap-3 md:gap-6">
           <a href="https://www.instagram.com/mays_folheados/" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-secondary transition-colors active:scale-95 transition-transform duration-300 flex items-center justify-center" title="Instagram">
@@ -252,7 +252,7 @@ export default function ProductsPage() {
       {/* Footer */}
       <footer className="w-full py-section-gap px-margin-mobile md:px-margin-desktop grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter bg-surface-container-high border-t border-primary/5">
         <div>
-          <h4 className="font-headline-lg text-headline-lg text-primary mb-6">MAY'S Joias & Acessórios</h4>
+          <h4 className="font-headline-lg text-headline-lg text-primary mb-6">may's joias & acessórios</h4>
           <p className="font-body-md text-body-md text-on-surface-variant mb-6">Transformando momentos em eternidade através de joias folheadas com alma e design exclusivo.</p>
           <div className="flex gap-4">
             <a href="https://www.instagram.com/mays_folheados/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-primary luxury-shadow hover:scale-110 transition-transform" title="Instagram">
@@ -299,7 +299,7 @@ export default function ProductsPage() {
           </div>
         </div>
         <div className="lg:col-span-4 pt-12 mt-12 border-t border-primary/10 text-center">
-          <p className="font-body-md text-body-md text-on-surface-variant">© 2024 MAY'S Joias & Acessórios. Handcrafted with intention.</p>
+          <p className="font-body-md text-body-md text-on-surface-variant">© 2024 may's joias & acessórios. Handcrafted with intention.</p>
         </div>
       </footer>
     </div>

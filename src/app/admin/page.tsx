@@ -176,7 +176,7 @@ export default function AdminPage() {
       {/* Admin Navbar */}
       <nav className="fixed top-0 w-full z-50 flex justify-between items-center px-6 md:px-12 h-20 bg-white/80 backdrop-blur-md border-b border-[#d2c3c4]/20">
         <Link href="/" className="font-display-lg text-2xl text-[#70585b] tracking-tighter hover:opacity-85 transition-opacity">
-          MAY'S Joias & Acessórios <span className="text-xs uppercase tracking-widest text-[#775a19] ml-2">Painel Admin</span>
+          may's joias & acessórios <span className="text-xs uppercase tracking-widest text-[#775a19] ml-2">Painel Admin</span>
         </Link>
         <div className="flex items-center gap-4">
           <Link href="/products" className="font-label-md text-sm text-[#70585b] hover:text-[#775a19] transition-colors border border-[#70585b]/20 px-4 py-2 rounded-full">

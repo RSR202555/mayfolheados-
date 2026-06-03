@@ -18,7 +18,7 @@ export default function CartDrawer() {
   const handleCheckout = () => {
     if (cartItems.length === 0) return;
 
-    let messageText = `Olá! Gostaria de finalizar o pedido das seguintes semijoias na *MAY'S Joias & Acessórios*:\n\n`;
+    let messageText = `Olá! Gostaria de finalizar o pedido das seguintes semijoias na *may's joias & acessórios*:\n\n`;
 
     cartItems.forEach((item) => {
       messageText += `🔹 *${item.quantity}x* ${item.product.name}\n`;
