@@ -91,10 +91,22 @@ export default function ProductsPage() {
             <Link className="text-on-surface-variant hover:text-primary transition-colors duration-300 font-label-md text-label-md" href="/products">Brincos</Link>
           </div>
         </div>
-        <Link href="/" className="font-display-lg text-headline-lg-mobile md:text-display-lg text-primary tracking-tighter absolute left-1/2 -translate-x-1/2 hover:opacity-85 transition-opacity">
-          MAY'S Joias & Acessórios
+        <Link href="/" className="font-display-lg text-headline-lg-mobile md:text-display-lg text-primary tracking-tighter absolute left-1/2 -translate-x-1/2 hover:opacity-85 transition-opacity flex items-center gap-2 md:gap-3 whitespace-nowrap">
+          <img src="/logo_rosa_may.png" alt="MAY'S Logo" className="h-10 w-10 md:h-12 md:w-12 rounded-full object-cover border border-secondary/20" />
+          <span className="hidden sm:block">MAY'S Joias & Acessórios</span>
+          <span className="sm:hidden">MAY'S</span>
         </Link>
-        <div className="flex items-center gap-6">
+        <div className="flex items-center gap-3 md:gap-6">
+          <a href="https://www.instagram.com/mays_folheados/" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-secondary transition-colors active:scale-95 transition-transform duration-300 flex items-center justify-center" title="Instagram">
+            <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+              <path fillRule="evenodd" d="M12.315 2c2.43 0 2.784.008 3.81.056 1 .046 1.683.21 2.222.418a4.568 4.568 0 011.66 1.079c.497.496.883 1.07 1.08 1.662.208.539.372 1.223.418 2.223.048 1.026.056 1.38.056 3.81s-.008 2.784-.056 3.81c-.046 1-.21 1.683-.418 2.222a4.568 4.568 0 01-1.08 1.66 4.568 4.568 0 01-1.662 1.08c-.539.208-1.223.372-2.223.418-1.026.048-1.38.056-3.81.056s-2.784-.008-3.81-.056c-1-.046-1.683-.21-2.222-.418a4.568 4.568 0 01-1.66-1.079 4.568 4.568 0 01-1.08-1.662c-.208-.539-.372-1.223-.418-2.223C2.008 14.784 2 14.43 2 12s.008-2.784.056-3.81c.046-1 .21-1.683.418-2.222a4.568 4.568 0 011.08-1.66c.496-.497 1.07-.883 1.662-1.08C5.783 2.53 6.467 2.366 7.467 2.32 8.493 2.27 8.847 2.26 11.28 2.26h1.035zM12 7.5a4.5 4.5 0 100 9 4.5 4.5 0 000-9zm0 7.5a3 3 0 110-6 3 3 0 010 6zm5.27-8.13a1.125 1.125 0 11-2.25 0 1.125 1.125 0 012.25 0z" clipRule="evenodd" />
+            </svg>
+          </a>
+          <a href="https://wa.me/5575982227063" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-secondary transition-colors active:scale-95 transition-transform duration-300 flex items-center justify-center" title="WhatsApp">
+            <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+              <path fillRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 1.887.513 3.655 1.408 5.178L2.06 22.062l5.022-1.32C8.528 21.571 10.22 22 12.002 22c5.522 0 10-4.484 10-10.017C22.002 6.484 17.524 2 12 2zm5.72 13.916c-.244-.122-1.442-.712-1.664-.794-.223-.081-.385-.122-.547.122-.162.244-.627.794-.769.956-.142.162-.284.183-.528.061-1.018-.51-1.745-.94-2.433-1.636-.52-.527-.852-1.155-.953-1.336-.102-.181-.01-.28.081-.371.082-.08.183-.213.274-.32.091-.106.122-.182.183-.305.061-.122.03-.228-.015-.32-.045-.09-.385-.93-.527-1.272-.14-.336-.282-.29-.385-.295-.1-.005-.213-.005-.325-.005s-.294.04-.447.203c-.152.162-.578.568-.578 1.385s.599 1.61.68 1.723c.082.112 1.178 1.8 2.854 2.525.4.172.711.275.954.353.402.128.769.11 1.06.066.323-.048.995-.407 1.137-.8.142-.394.142-.732.1-.8-.04-.069-.152-.11-.395-.232z" clipRule="evenodd" />
+            </svg>
+          </a>
           <span className="material-symbols-outlined text-primary cursor-pointer active:scale-95 transition-transform hidden md:block" data-icon="search">search</span>
           <div onClick={openCart} className="flex items-center gap-4 cursor-pointer active:scale-95 transition-transform text-primary relative">
             <span className="material-symbols-outlined">shopping_bag</span>
@@ -240,9 +252,16 @@ export default function ProductsPage() {
           <h4 className="font-headline-lg text-headline-lg text-primary mb-6">MAY'S Joias & Acessórios</h4>
           <p className="font-body-md text-body-md text-on-surface-variant mb-6">Transformando momentos em eternidade através de joias folheadas com alma e design exclusivo.</p>
           <div className="flex gap-4">
-            <span className="material-symbols-outlined text-primary cursor-pointer hover:text-secondary transition-colors" data-icon="brand_awareness">brand_awareness</span>
-            <span className="material-symbols-outlined text-primary cursor-pointer hover:text-secondary transition-colors" data-icon="photo_camera">photo_camera</span>
-            <span className="material-symbols-outlined text-primary cursor-pointer hover:text-secondary transition-colors" data-icon="mail">mail</span>
+            <a href="https://www.instagram.com/mays_folheados/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-primary luxury-shadow hover:scale-110 transition-transform" title="Instagram">
+              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path fillRule="evenodd" d="M12.315 2c2.43 0 2.784.008 3.81.056 1 .046 1.683.21 2.222.418a4.568 4.568 0 011.66 1.079c.497.496.883 1.07 1.08 1.662.208.539.372 1.223.418 2.223.048 1.026.056 1.38.056 3.81s-.008 2.784-.056 3.81c-.046 1-.21 1.683-.418 2.222a4.568 4.568 0 01-1.08 1.66 4.568 4.568 0 01-1.662 1.08c-.539.208-1.223.372-2.223.418-1.026.048-1.38.056-3.81.056s-2.784-.008-3.81-.056c-1-.046-1.683-.21-2.222-.418a4.568 4.568 0 01-1.66-1.079 4.568 4.568 0 01-1.08-1.662c-.208-.539-.372-1.223-.418-2.223C2.008 14.784 2 14.43 2 12s.008-2.784.056-3.81c.046-1 .21-1.683.418-2.222a4.568 4.568 0 011.08-1.66c.496-.497 1.07-.883 1.662-1.08C5.783 2.53 6.467 2.366 7.467 2.32 8.493 2.27 8.847 2.26 11.28 2.26h1.035zM12 7.5a4.5 4.5 0 100 9 4.5 4.5 0 000-9zm0 7.5a3 3 0 110-6 3 3 0 010 6zm5.27-8.13a1.125 1.125 0 11-2.25 0 1.125 1.125 0 012.25 0z" clipRule="evenodd" />
+              </svg>
+            </a>
+            <a href="https://wa.me/5575982227063" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-primary luxury-shadow hover:scale-110 transition-transform" title="WhatsApp">
+              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path fillRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 1.887.513 3.655 1.408 5.178L2.06 22.062l5.022-1.32C8.528 21.571 10.22 22 12.002 22c5.522 0 10-4.484 10-10.017C22.002 6.484 17.524 2 12 2zm5.72 13.916c-.244-.122-1.442-.712-1.664-.794-.223-.081-.385-.122-.547.122-.162.244-.627.794-.769.956-.142.162-.284.183-.528.061-1.018-.51-1.745-.94-2.433-1.636-.52-.527-.852-1.155-.953-1.336-.102-.181-.01-.28.081-.371.082-.08.183-.213.274-.32.091-.106.122-.182.183-.305.061-.122.03-.228-.015-.32-.045-.09-.385-.93-.527-1.272-.14-.336-.282-.29-.385-.295-.1-.005-.213-.005-.325-.005s-.294.04-.447.203c-.152.162-.578.568-.578 1.385s.599 1.61.68 1.723c.082.112 1.178 1.8 2.854 2.525.4.172.711.275.954.353.402.128.769.11 1.06.066.323-.048.995-.407 1.137-.8.142-.394.142-.732.1-.8-.04-.069-.152-.11-.395-.232z" clipRule="evenodd" />
+              </svg>
+            </a>
           </div>
         </div>
         <div>
@@ -257,7 +276,7 @@ export default function ProductsPage() {
         <div>
           <h5 className="font-label-md text-label-md text-on-surface font-semibold mb-6 uppercase tracking-widest">Experience</h5>
           <ul className="flex flex-col gap-4">
-            <li><a className="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="#">Our Story</a></li>
+            <li><Link className="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="/products">Novidades</Link></li>
             <li><a className="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="#">Sustainability</a></li>
             <li><a className="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="#">Care Guide</a></li>
             <li><a className="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="#">Personal Shopping</a></li>

@@ -117,28 +117,45 @@ export default function Home() {
         <div className="flex items-center gap-4 cursor-pointer active:scale-95 transition-transform text-primary">
           <span className="material-symbols-outlined">menu</span>
         </div>
-        <div className="font-display-lg text-display-lg-mobile md:text-display-lg text-primary tracking-tighter">
-          <Link href="/">MAY'S Joias & Acessórios</Link>
+        <div className="flex items-center">
+          <Link href="/" className="flex items-center gap-3 hover:opacity-90 transition-opacity">
+            <img src="/logo_rosa_may.png" alt="MAY'S Logo" className="h-10 w-10 md:h-12 md:w-12 rounded-full object-cover border border-secondary/20" />
+            <span className="font-display-lg text-display-lg-mobile md:text-display-lg text-primary tracking-tighter hidden sm:block">
+              MAY'S Joias & Acessórios
+            </span>
+            <span className="font-display-lg text-display-lg-mobile text-primary tracking-tighter sm:hidden">
+              MAY'S
+            </span>
+          </Link>
         </div>
         <div className="flex items-center gap-6">
-          <div className="hidden md:flex gap-8">
+          <div className="hidden md:flex gap-8 items-center">
             <Link className="font-label-md text-label-md text-primary font-medium hover:text-secondary transition-colors duration-300" href="/products">
               Boutique
             </Link>
             <Link className="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors duration-300" href="/products">
               Coleções
             </Link>
-            <a className="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">
-              História
-            </a>
           </div>
-          <div onClick={openCart} className="flex items-center gap-4 cursor-pointer active:scale-95 transition-transform text-primary relative">
-            <span className="material-symbols-outlined">shopping_bag</span>
-            {cartCount > 0 && (
-              <span className="absolute -top-2 -right-2 bg-secondary text-white rounded-full w-5 h-5 flex items-center justify-center text-[10px] font-bold font-sans">
-                {cartCount}
-              </span>
-            )}
+          <div className="flex items-center gap-4">
+            <a href="https://www.instagram.com/mays_folheados/" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-secondary transition-colors active:scale-95 transition-transform duration-300 flex items-center justify-center" title="Instagram">
+              <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <path fillRule="evenodd" d="M12.315 2c2.43 0 2.784.008 3.81.056 1 .046 1.683.21 2.222.418a4.568 4.568 0 011.66 1.079c.497.496.883 1.07 1.08 1.662.208.539.372 1.223.418 2.223.048 1.026.056 1.38.056 3.81s-.008 2.784-.056 3.81c-.046 1-.21 1.683-.418 2.222a4.568 4.568 0 01-1.08 1.66 4.568 4.568 0 01-1.662 1.08c-.539.208-1.223.372-2.223.418-1.026.048-1.38.056-3.81.056s-2.784-.008-3.81-.056c-1-.046-1.683-.21-2.222-.418a4.568 4.568 0 01-1.66-1.079 4.568 4.568 0 01-1.08-1.662c-.208-.539-.372-1.223-.418-2.223C2.008 14.784 2 14.43 2 12s.008-2.784.056-3.81c.046-1 .21-1.683.418-2.222a4.568 4.568 0 011.08-1.66c.496-.497 1.07-.883 1.662-1.08C5.783 2.53 6.467 2.366 7.467 2.32 8.493 2.27 8.847 2.26 11.28 2.26h1.035zM12 7.5a4.5 4.5 0 100 9 4.5 4.5 0 000-9zm0 7.5a3 3 0 110-6 3 3 0 010 6zm5.27-8.13a1.125 1.125 0 11-2.25 0 1.125 1.125 0 012.25 0z" clipRule="evenodd" />
+              </svg>
+            </a>
+            <a href="https://wa.me/5575982227063" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-secondary transition-colors active:scale-95 transition-transform duration-300 flex items-center justify-center" title="WhatsApp">
+              <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <path fillRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 1.887.513 3.655 1.408 5.178L2.06 22.062l5.022-1.32C8.528 21.571 10.22 22 12.002 22c5.522 0 10-4.484 10-10.017C22.002 6.484 17.524 2 12 2zm5.72 13.916c-.244-.122-1.442-.712-1.664-.794-.223-.081-.385-.122-.547.122-.162.244-.627.794-.769.956-.142.162-.284.183-.528.061-1.018-.51-1.745-.94-2.433-1.636-.52-.527-.852-1.155-.953-1.336-.102-.181-.01-.28.081-.371.082-.08.183-.213.274-.32.091-.106.122-.182.183-.305.061-.122.03-.228-.015-.32-.045-.09-.385-.93-.527-1.272-.14-.336-.282-.29-.385-.295-.1-.005-.213-.005-.325-.005s-.294.04-.447.203c-.152.162-.578.568-.578 1.385s.599 1.61.68 1.723c.082.112 1.178 1.8 2.854 2.525.4.172.711.275.954.353.402.128.769.11 1.06.066.323-.048.995-.407 1.137-.8.142-.394.142-.732.1-.8-.04-.069-.152-.11-.395-.232z" clipRule="evenodd" />
+              </svg>
+            </a>
+            <div onClick={openCart} className="flex items-center gap-4 cursor-pointer active:scale-95 transition-transform text-primary relative">
+              <span className="material-symbols-outlined">shopping_bag</span>
+              {cartCount > 0 && (
+                <span className="absolute -top-2 -right-2 bg-secondary text-white rounded-full w-5 h-5 flex items-center justify-center text-[10px] font-bold font-sans">
+                  {cartCount}
+                </span>
+              )}
+            </div>
           </div>
         </div>
       </header>
@@ -161,9 +178,6 @@ export default function Home() {
                 <Link href="/products" className="px-10 py-4 bg-secondary text-white rounded-full font-label-md text-label-md hover:bg-primary transition-all luxury-shadow active:scale-95 inline-block text-center">
                   Explorar Coleção
                 </Link>
-                <a href="#" className="px-10 py-4 border soft-gold-border text-secondary rounded-full font-label-md text-label-md hover:bg-white/50 transition-all active:scale-95 inline-block text-center">
-                  Nossa História
-                </a>
               </div>
             </div>
             <div className="lg:col-span-6 relative h-[500px] lg:h-auto">
@@ -282,32 +296,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Brand Story Section */}
-        <section className="py-section-gap px-margin-mobile md:px-margin-desktop bg-surface-container">
-          <div className="max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-2 gap-section-gap items-center">
-            <div className="relative order-2 md:order-1">
-              <div className="aspect-[3/4] rounded-[60px] overflow-hidden luxury-shadow border-8 border-white/40">
-                <img alt="Artisanal Process" className="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-XB4dxAbmknMfL-j4pFIYlTVhoIkUA9qRD7Xf5Nh_wpidafy5-Z1y9E2pBcZGBrDcxz1JeiNDsyuxfx-afz4l6EZ1DCAToHUAhPrK21hwJFj0-32-BCpg3cnxykz9mX-3Yg8sCJ-Ywwo_TJ2ktsdjpknHel3wXE11Izw9bz3t21E5yvw1VWsLTJi8b1KDDqWVTMHkS5fSIDsqLRlsUUFBs5qMSjICe6uG-9AvvOmzPQnm6SUM00wlK2FMEYABWikg-WF3n_T4UKA" />
-              </div>
-              <div className="absolute -bottom-10 -right-10 w-48 h-48 bg-white/40 backdrop-blur-xl rounded-full flex items-center justify-center p-8 text-center border border-white/60 hidden lg:flex">
-                <p className="font-headline-md text-headline-md text-primary leading-tight">Feito com <br />Intenção</p>
-              </div>
-            </div>
-            <div className="space-y-8 order-1 md:order-2">
-              <span className="font-label-md text-label-md text-secondary tracking-widest uppercase block">Nosso Manifesto</span>
-              <h2 className="font-display-lg text-display-lg-mobile md:text-headline-lg text-primary">História de Brilho</h2>
-              <div className="space-y-6">
-                <p className="font-body-lg text-body-lg text-on-surface-variant">Na MAY'S Joias & Acessórios, acreditamos que cada joia carrega uma memory. Fundada sob o desejo de unir a sofisticação da joalheria clássica com a leveza do design contemporâneo, nossas peças são pensadas para a mulher que valoriza o detalhe e o processo.</p>
-                <p className="font-body-lg text-body-lg text-on-surface-variant">
-                  Cada item é cuidadosamente folheado com múltiplas camadas de metais nobres, garantindo não apenas um brilho radiante, mas a durabilidade que uma peça eterna exige. Nosso compromisso é com a beleza que não se esforça, mas que se faz notar.
-                </p>
-              </div>
-              <button className="font-label-md text-label-md text-primary border-b border-primary/30 pb-1 hover:text-secondary hover:border-secondary transition-all">
-                Conheça nossos processos
-              </button>
-            </div>
-          </div>
-        </section>
+
 
         {/* Newsletter Section */}
         <section className="py-section-gap px-margin-mobile md:px-margin-desktop bg-surface">
@@ -352,11 +341,15 @@ export default function Home() {
         <div className="flex flex-col gap-4">
           <h4 className="font-label-md text-label-md text-primary font-bold uppercase tracking-wider">Conectar</h4>
           <div className="flex gap-4">
-            <a className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-primary luxury-shadow hover:scale-110 transition-transform" href="#">
-              <span className="material-symbols-outlined">share</span>
+            <a className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-primary luxury-shadow hover:scale-110 transition-transform" href="https://www.instagram.com/mays_folheados/" target="_blank" rel="noopener noreferrer" title="Instagram">
+              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path fillRule="evenodd" d="M12.315 2c2.43 0 2.784.008 3.81.056 1 .046 1.683.21 2.222.418a4.568 4.568 0 011.66 1.079c.497.496.883 1.07 1.08 1.662.208.539.372 1.223.418 2.223.048 1.026.056 1.38.056 3.81s-.008 2.784-.056 3.81c-.046 1-.21 1.683-.418 2.222a4.568 4.568 0 01-1.08 1.66 4.568 4.568 0 01-1.662 1.08c-.539.208-1.223.372-2.223.418-1.026.048-1.38.056-3.81.056s-2.784-.008-3.81-.056c-1-.046-1.683-.21-2.222-.418a4.568 4.568 0 01-1.66-1.079 4.568 4.568 0 01-1.08-1.662c-.208-.539-.372-1.223-.418-2.223C2.008 14.784 2 14.43 2 12s.008-2.784.056-3.81c.046-1 .21-1.683.418-2.222a4.568 4.568 0 011.08-1.66c.496-.497 1.07-.883 1.662-1.08C5.783 2.53 6.467 2.366 7.467 2.32 8.493 2.27 8.847 2.26 11.28 2.26h1.035zM12 7.5a4.5 4.5 0 100 9 4.5 4.5 0 000-9zm0 7.5a3 3 0 110-6 3 3 0 010 6zm5.27-8.13a1.125 1.125 0 11-2.25 0 1.125 1.125 0 012.25 0z" clipRule="evenodd" />
+              </svg>
             </a>
-            <a className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-primary luxury-shadow hover:scale-110 transition-transform" href="#">
-              <span className="material-symbols-outlined">mail</span>
+            <a className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-primary luxury-shadow hover:scale-110 transition-transform" href="https://wa.me/5575982227063" target="_blank" rel="noopener noreferrer" title="WhatsApp">
+              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path fillRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 1.887.513 3.655 1.408 5.178L2.06 22.062l5.022-1.32C8.528 21.571 10.22 22 12.002 22c5.522 0 10-4.484 10-10.017C22.002 6.484 17.524 2 12 2zm5.72 13.916c-.244-.122-1.442-.712-1.664-.794-.223-.081-.385-.122-.547.122-.162.244-.627.794-.769.956-.142.162-.284.183-.528.061-1.018-.51-1.745-.94-2.433-1.636-.52-.527-.852-1.155-.953-1.336-.102-.181-.01-.28.081-.371.082-.08.183-.213.274-.32.091-.106.122-.182.183-.305.061-.122.03-.228-.015-.32-.045-.09-.385-.93-.527-1.272-.14-.336-.282-.29-.385-.295-.1-.005-.213-.005-.325-.005s-.294.04-.447.203c-.152.162-.578.568-.578 1.385s.599 1.61.68 1.723c.082.112 1.178 1.8 2.854 2.525.4.172.711.275.954.353.402.128.769.11 1.06.066.323-.048.995-.407 1.137-.8.142-.394.142-.732.1-.8-.04-.069-.152-.11-.395-.232z" clipRule="evenodd" />
+              </svg>
             </a>
           </div>
           <p className="font-label-sm text-label-sm text-on-surface-variant mt-4">© 2024 MAY'S Joias & Acessórios. Handcrafted with intention.</p>
