@@ -34,7 +34,7 @@ interface CartContextType {
 const CartContext = createContext<CartContextType | undefined>(undefined);
 
 // Default WhatsApp Number (User can customize this)
-export const WHATSAPP_NUMBER = '5511999999999'; // Substitua pelo número da loja com DDI e DDD (ex: 55 + DDD + Número)
+export const WHATSAPP_NUMBER = '5575982227063'; // Substitua pelo número da loja com DDI e DDD (ex: 55 + DDD + Número)
 
 export function CartProvider({ children }: { children: React.ReactNode }) {
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
