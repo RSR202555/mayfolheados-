@@ -240,7 +240,7 @@ export default function AdminPage() {
                   className="w-full bg-[#fff8f3] border border-[#d2c3c4] rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#775a19] transition-colors"
                 >
                   <option value="Anéis">Anéis</option>
-                  <option value="Colares">Colares</option>
+                  <option value="Personalizados">Personalizados</option>
                   <option value="Brincos">Brincos</option>
                   <option value="Pulseiras">Pulseiras</option>
                   <option value="Braceletes">Braceletes</option>

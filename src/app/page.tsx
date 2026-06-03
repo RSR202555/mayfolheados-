@@ -20,7 +20,7 @@ const DEFAULT_FEATURED: Product[] = [
     name: 'Colar Gota de Luz',
     price: 189.00,
     image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDMqQVbX2eG2YwwUYZBxcMFwcx0gYknzEayB034ly1uPddy_Kk0XStaKewdm4h6MKRfZDBmUuRtiv2i8CAQHbPEeUjhbb8tVxd0Js9pCTjegselm5N62blgL98rwYbR5nurodDzssI40kSuNqaKybfsq6O3LgGb7z6aIqscM5PleEbZ4A19pXdvcRJnKbVqOI4MhZ-w49D6by1oZegJhB0gzdxD9UfjlXGkvou6ZR7TVquuHAyhJtZ76agaX60rWesM3MdY5HIr5q4',
-    category: 'Colares'
+    category: 'Personalizados'
   },
   {
     id: 'h2',
@@ -146,9 +146,8 @@ export default function Home() {
               </svg>
             </a>
             <a href="https://wa.me/5575982227063" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-secondary transition-colors active:scale-95 transition-transform duration-300 flex items-center justify-center" title="WhatsApp">
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
-                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
-                <path d="M17 14c-.3-.1-1.7-.8-2-1-.3-.1-.5-.2-.7.1-.2.3-.8 1-.9 1.1-.2.2-.3.2-.6.1-1.1-.5-2-1-2.7-2.3-.2-.3-.2-.5-.1-.7.1-.2.3-.4.4-.6.1-.2.2-.3.2-.5 0-.2 0-.4-.1-.5-.1-.2-.7-1.6-.9-2.1-.3-.7-.6-.6-.9-.6H9c-.2 0-.6.1-.9.4C7.8 7.6 7 8.5 7 10.3c0 2.2 1.6 4.3 1.8 4.6.2.3 3.1 4.7 7.5 6.6 1.1.5 1.9.8 2.5 1 1.1.3 2.1.3 2.9.2.9-.1 2.8-1.1 3.2-2.2.4-1.1.4-2 .3-2.2-.1-.2-.5-.3-.7-.4z" />
+              <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 16 16">
+                <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.01-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/>
               </svg>
             </a>
             <div onClick={openCart} className="flex items-center gap-4 cursor-pointer active:scale-95 transition-transform text-primary relative">
@@ -209,9 +208,9 @@ export default function Home() {
               {/* Category Item */}
               <Link href="/products" className="group cursor-pointer">
                 <div className="aspect-[4/5] bg-surface rounded-2xl overflow-hidden mb-4 relative flex items-center justify-center transition-transform duration-500 group-hover:scale-105 border border-white/50">
-                  <img alt="Colares" className="w-full h-full object-cover mix-blend-multiply opacity-80" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1QMZMShl9YFlP4QZ_6wEQKTqTXfLRo5YaON2jSXTH-rS5Uz8FsXQhmQXkzJaesH5di1eloMuddQZ3HNsqm2o8x6qv-qL9FzmtCrCT-LYO6F69_7lt27Gc5Vmp_8e2frNVUx9iJqoSq8hA_B62IzycCIYna1gn0nUr4ok-KbrTnemYEuvbgh_-3jNhCVK9q5FPHdX1GdVeB8LeKIKvSfA-Buyu2JDg1qXCxoDjGmDXVdKUY7aS979jbZvNE9X1wyQGKikr4ikh8iw" />
+                  <img alt="Personalizados" className="w-full h-full object-cover mix-blend-multiply opacity-80" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1QMZMShl9YFlP4QZ_6wEQKTqTXfLRo5YaON2jSXTH-rS5Uz8FsXQhmQXkzJaesH5di1eloMuddQZ3HNsqm2o8x6qv-qL9FzmtCrCT-LYO6F69_7lt27Gc5Vmp_8e2frNVUx9iJqoSq8hA_B62IzycCIYna1gn0nUr4ok-KbrTnemYEuvbgh_-3jNhCVK9q5FPHdX1GdVeB8LeKIKvSfA-Buyu2JDg1qXCxoDjGmDXVdKUY7aS979jbZvNE9X1wyQGKikr4ikh8iw" />
                 </div>
-                <h3 className="font-headline-md text-headline-md text-center text-primary">Colares</h3>
+                <h3 className="font-headline-md text-headline-md text-center text-primary">Personalizados</h3>
               </Link>
               {/* Category Item */}
               <Link href="/products" className="group cursor-pointer">
@@ -352,9 +351,8 @@ export default function Home() {
               </svg>
             </a>
             <a className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-primary luxury-shadow hover:scale-110 transition-transform" href="https://wa.me/5575982227063" target="_blank" rel="noopener noreferrer" title="WhatsApp">
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
-                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
-                <path d="M17 14c-.3-.1-1.7-.8-2-1-.3-.1-.5-.2-.7.1-.2.3-.8 1-.9 1.1-.2.2-.3.2-.6.1-1.1-.5-2-1-2.7-2.3-.2-.3-.2-.5-.1-.7.1-.2.3-.4.4-.6.1-.2.2-.3.2-.5 0-.2 0-.4-.1-.5-.1-.2-.7-1.6-.9-2.1-.3-.7-.6-.6-.9-.6H9c-.2 0-.6.1-.9.4C7.8 7.6 7 8.5 7 10.3c0 2.2 1.6 4.3 1.8 4.6.2.3 3.1 4.7 7.5 6.6 1.1.5 1.9.8 2.5 1 1.1.3 2.1.3 2.9.2.9-.1 2.8-1.1 3.2-2.2.4-1.1.4-2 .3-2.2-.1-.2-.5-.3-.7-.4z" />
+              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 16 16">
+                <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.01-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/>
               </svg>
             </a>
           </div>

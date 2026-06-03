@@ -3,7 +3,7 @@ export interface Product {
   name: string;
   price: number;
   image: string;
-  category: 'Anéis' | 'Colares' | 'Brincos' | 'Pulseiras' | 'Braceletes' | 'Correntes';
+  category: 'Anéis' | 'Personalizados' | 'Brincos' | 'Pulseiras' | 'Braceletes' | 'Correntes';
   material: 'Ouro 18k' | 'Rodio Branco';
   isNew?: boolean;
   isBestSeller?: boolean;
@@ -24,7 +24,7 @@ export const initialProducts: Product[] = [
     name: 'Colar Elo Orgânico',
     price: 245.00,
     image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBImyUIwzpD09yxjkL5ceTIfLtRncsu2YPQyJwU1cF8Gqz0KE_V3x9GUhZAhagX-k7vW8d0ILPU-GNKlpHpHcKFDIpc7zl3rmW_wmC3mGMjgxBBSexNBt5BotTPAQn9xOTVZlv9i19U1v7JLew7EOzdKmm-AwLhGZKIhHZeSJyFQZASkwMyFvf6iIUwm__tA09gUpkq6xjLknCxOBRJkcQD_pilqoKRFCiNOBFPPWWBlonGeThej1m6iOGRC0eLcQhy3DoodpzGEV8',
-    category: 'Colares',
+    category: 'Personalizados',
     material: 'Ouro 18k'
   },
   {
