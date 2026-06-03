@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 
 interface Product {
   id: string;
@@ -14,6 +15,7 @@ interface Product {
 }
 
 export default function AdminPage() {
+  const router = useRouter();
   const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState(true);
   const [submitting, setSubmitting] = useState(false);
@@ -55,6 +57,23 @@ export default function AdminPage() {
     setImageUrl('');
     setImageFile(null);
     setMessage(null);
+  };
+
+  const handleLogout = async () => {
+    try {
+      const res = await fetch('/api/auth/logout', {
+        method: 'POST',
+      });
+      if (res.ok) {
+        router.push('/admin/login');
+        router.refresh();
+      } else {
+        setMessage({ type: 'error', text: 'Erro ao efetuar logout.' });
+      }
+    } catch (error) {
+      console.error('Logout error:', error);
+      setMessage({ type: 'error', text: 'Erro ao conectar ao servidor.' });
+    }
   };
 
   const fetchProducts = async () => {
@@ -159,9 +178,18 @@ export default function AdminPage() {
         <Link href="/" className="font-display-lg text-2xl text-[#70585b] tracking-tighter hover:opacity-85 transition-opacity">
           May's Folheados <span className="text-xs uppercase tracking-widest text-[#775a19] ml-2">Painel Admin</span>
         </Link>
-        <Link href="/products" className="font-label-md text-sm text-[#70585b] hover:text-[#775a19] transition-colors border border-[#70585b]/20 px-4 py-2 rounded-full">
-          Ver Catálogo
-        </Link>
+        <div className="flex items-center gap-4">
+          <Link href="/products" className="font-label-md text-sm text-[#70585b] hover:text-[#775a19] transition-colors border border-[#70585b]/20 px-4 py-2 rounded-full">
+            Ver Catálogo
+          </Link>
+          <button 
+            onClick={handleLogout}
+            className="font-label-md text-sm text-white bg-[#70585b] hover:bg-[#ba1a1a] transition-colors px-4 py-2 rounded-full flex items-center gap-1 active:scale-95 cursor-pointer"
+          >
+            <span className="material-symbols-outlined text-[18px]">logout</span>
+            Sair
+          </button>
+        </div>
       </nav>
 
       <main className="pt-28 pb-16 px-6 md:px-12 max-w-7xl mx-auto w-full flex-grow grid grid-cols-1 lg:grid-cols-12 gap-8">
