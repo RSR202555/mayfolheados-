@@ -44,7 +44,7 @@ export default function AdminLoginPage() {
       {/* Navbar Simple */}
       <header className="w-full flex justify-between items-center px-6 md:px-12 h-20 bg-white/40 backdrop-blur-md border-b border-[#d2c3c4]/10">
         <Link href="/" className="font-display-lg text-xl text-[#70585b] tracking-tighter hover:opacity-85 transition-opacity">
-          may's joias & acessórios
+          May's Joias
         </Link>
         <Link href="/" className="text-xs uppercase tracking-widest text-[#775a19] font-semibold hover:opacity-85 transition-opacity">
           Voltar à Loja

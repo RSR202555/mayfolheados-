@@ -121,7 +121,7 @@ export default function Home() {
           <Link href="/" className="flex items-center gap-3 hover:opacity-90 transition-opacity">
             <img src="/logo_rosa_may.png" alt="may's logo" className="h-14 w-14 md:h-16 md:w-16 rounded-full object-cover border border-secondary/20 transition-all duration-300" />
             <span className="font-display-lg text-display-lg-mobile md:text-display-lg text-primary tracking-tighter hidden sm:block">
-              may's joias & acessórios
+              May's Joias
             </span>
             <span className="font-display-lg text-display-lg-mobile text-primary tracking-tighter sm:hidden">
               may's
@@ -237,7 +237,7 @@ export default function Home() {
             <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-4">
               <div className="space-y-2">
                 <span className="font-label-md text-label-md text-secondary tracking-[0.2em] uppercase">Seleção Especial</span>
-                <h2 className="font-display-lg text-display-lg-mobile md:text-headline-lg text-primary">Destaques da Estação</h2>
+                <h2 className="font-display-lg text-display-lg-mobile md:text-headline-lg text-primary">Peças que Encantam</h2>
               </div>
               <Link className="font-label-md text-label-md text-on-surface-variant flex items-center gap-2 group hover:text-primary transition-colors" href="/products">
                 Ver Todos os Produtos

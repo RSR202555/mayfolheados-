@@ -93,7 +93,7 @@ export default function ProductsPage() {
         </div>
         <Link href="/" className="font-display-lg text-headline-lg-mobile md:text-display-lg text-primary tracking-tighter absolute left-1/2 -translate-x-1/2 hover:opacity-85 transition-opacity flex items-center gap-2 md:gap-3 whitespace-nowrap">
           <img src="/logo_rosa_may.png" alt="may's logo" className={`rounded-full object-cover border border-secondary/20 transition-all duration-300 ${scrolled ? 'h-11 w-11' : 'h-14 w-14 md:h-16 md:w-16'}`} />
-          <span className="hidden sm:block">may's joias & acessórios</span>
+          <span className="hidden sm:block">May's Joias</span>
           <span className="sm:hidden">may's</span>
         </Link>
         <div className="flex items-center gap-3 md:gap-6">
