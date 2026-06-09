@@ -71,7 +71,7 @@ export default function ProductsPage() {
     };
   }, [loading]);
 
-  const categories = ['Todos', 'Anéis', 'Personalizados', 'Brincos', 'Pulseiras', 'Braceletes', 'Correntes', 'Novidades'];
+  const categories = ['Todos', 'Anéis', 'Personalizados', 'Brincos', 'Pulseiras', 'Braceletes', 'Colares', 'Relicários', 'Peças Masculinas', 'Conjuntos', 'Chaveiros', 'Sessão Pet', 'Novidades'];
 
   const filteredProducts = products.filter(product => {
     if (selectedCategory === 'Todos') return true;
@@ -84,7 +84,6 @@ export default function ProductsPage() {
       {/* Top Navigation Bar */}
       <nav className={`fixed top-0 w-full z-50 flex justify-between items-center px-margin-mobile md:px-margin-desktop bg-surface/80 backdrop-blur-md border-b border-outline-variant/10 transition-all duration-300 ${scrolled ? 'h-16 shadow-sm' : 'h-20'}`}>
         <div className="flex items-center gap-6">
-          <span className="material-symbols-outlined text-primary cursor-pointer active:scale-95 transition-transform" data-icon="menu">menu</span>
           <div className="hidden md:flex gap-8">
             <Link className="text-on-surface-variant hover:text-primary transition-colors duration-300 font-label-md text-label-md" href="/products">Anéis</Link>
             <Link className="text-on-surface-variant hover:text-primary transition-colors duration-300 font-label-md text-label-md" href="/products">Personalizados</Link>

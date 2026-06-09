@@ -114,9 +114,6 @@ export default function Home() {
     <div className="bg-background text-on-surface font-body-md min-h-screen flex flex-col">
       {/* Top Navigation Bar */}
       <header className={`fixed top-0 w-full z-50 flex justify-between items-center px-margin-mobile md:px-margin-desktop h-20 transition-all duration-300 border-b border-surface-variant/30 ${scrolled ? 'shadow-sm bg-surface/90 backdrop-blur-md' : 'bg-surface/70 backdrop-blur-md'}`}>
-        <div className="flex items-center gap-4 cursor-pointer active:scale-95 transition-transform text-primary">
-          <span className="material-symbols-outlined">menu</span>
-        </div>
         <div className="flex items-center">
           <Link href="/" className="flex items-center gap-3 hover:opacity-90 transition-opacity">
             <img src="/logo_rosa_may.png" alt="may's logo" className="h-14 w-14 md:h-16 md:w-16 rounded-full object-cover border border-secondary/20 transition-all duration-300" />
@@ -169,7 +166,6 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-gutter w-full max-w-container-max mx-auto">
             <div className="lg:col-span-6 flex flex-col justify-center space-y-8 z-10 py-12">
               <div className="space-y-4">
-                <span className="font-label-md text-label-md tracking-widest text-secondary uppercase block mb-4">Coleção Primavera 2024</span>
                 <h1 className="font-display-lg text-display-lg-mobile md:text-display-lg text-primary leading-tight">
                   A Elegância em <br /> Cada Detalhe.
                 </h1>
@@ -183,9 +179,11 @@ export default function Home() {
                 </Link>
               </div>
             </div>
-            <div className="lg:col-span-6 relative h-[500px] lg:h-auto">
-              <div className="absolute inset-0 bg-surface-container rounded-[40px] rotate-3 -z-10 opacity-60"></div>
-              <img alt="Luxury Jewelry Showcase" className="w-full h-full object-cover rounded-[40px] luxury-shadow border-4 border-white/40" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBMK6nefhd7M3nYpmysSlwd-DA4OO4tl1xvuAmIn_eJJrZRrm6mpsBImKFBZgK14SujDk8Y54lx7swyKXVidZJL1T1JEmfGv7qEyoRki3-0lOY0vcx2naKf7qTO3HK9AKO7xceSk0SrtSBgD2QGNMtMr4yUcWZGUqdndtS3ikbr6xgcy8BBI1BRa-MBWFeuDpRCia7W3O9fZWC3CkCaymJpfo8u-A20f1op4Mcn_55-W6gA9aDHGIVxPAJ-SXNoPZfSXHwn5TeUSc" />
+            <div className="lg:col-span-6 flex items-center justify-center">
+              <div className="relative h-[500px] lg:h-[550px] aspect-[827/1190]">
+                <div className="absolute inset-0 bg-surface-container rounded-2xl rotate-3 -z-10 opacity-60"></div>
+                <img alt="Luxury Jewelry Showcase" className="w-full h-full object-contain luxury-shadow" src="/hero-v2.jfif" />
+              </div>
             </div>
           </div>
         </section>

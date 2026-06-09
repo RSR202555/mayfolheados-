@@ -244,7 +244,12 @@ export default function AdminPage() {
                   <option value="Brincos">Brincos</option>
                   <option value="Pulseiras">Pulseiras</option>
                   <option value="Braceletes">Braceletes</option>
-                  <option value="Correntes">Correntes</option>
+                  <option value="Colares">Colares</option>
+                  <option value="Relicários">Relicários</option>
+                  <option value="Peças Masculinas">Peças Masculinas</option>
+                  <option value="Conjuntos">Conjuntos</option>
+                  <option value="Chaveiros">Chaveiros</option>
+                  <option value="Sessão Pet">Sessão Pet</option>
                 </select>
               </div>
             </div>

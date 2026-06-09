@@ -3,7 +3,7 @@ export interface Product {
   name: string;
   price: number;
   image: string;
-  category: 'Anéis' | 'Personalizados' | 'Brincos' | 'Pulseiras' | 'Braceletes' | 'Correntes';
+  category: 'Anéis' | 'Personalizados' | 'Brincos' | 'Pulseiras' | 'Braceletes' | 'Colares' | 'Relicários' | 'Peças Masculinas' | 'Conjuntos' | 'Chaveiros' | 'Sessão Pet';
   material: 'Ouro 18k' | 'Rodio Branco';
   isNew?: boolean;
   isBestSeller?: boolean;
