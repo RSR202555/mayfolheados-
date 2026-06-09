@@ -19,6 +19,9 @@ export default function ProductsPage() {
   const [selectedCategory, setSelectedCategory] = useState('Todos');
   const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState(true);
+  const [isFilterOpen, setIsFilterOpen] = useState(false);
+  const [isSortOpen, setIsSortOpen] = useState(false);
+  const [selectedSort, setSelectedSort] = useState('default');
   
   const { addToCart, openCart, cartCount } = useCart();
 
@@ -77,6 +80,19 @@ export default function ProductsPage() {
     if (selectedCategory === 'Todos') return true;
     if (selectedCategory === 'Novidades') return product.isNew;
     return product.category === selectedCategory;
+  });
+
+  const sortedProducts = [...filteredProducts].sort((a, b) => {
+    if (selectedSort === 'price-asc') {
+      return a.price - b.price;
+    }
+    if (selectedSort === 'price-desc') {
+      return b.price - a.price;
+    }
+    if (selectedSort === 'name-asc') {
+      return a.name.localeCompare(b.name);
+    }
+    return 0;
   });
 
   return (
@@ -145,13 +161,85 @@ export default function ProductsPage() {
             ))}
           </div>
           <div className="flex items-center gap-8 self-end md:self-auto">
-            <div className="flex items-center gap-2 cursor-pointer group">
-              <span className="font-label-md text-label-md text-on-surface-variant group-hover:text-primary">Filtrar</span>
-              <span className="material-symbols-outlined text-on-surface-variant group-hover:text-primary" data-icon="tune">tune</span>
+            {/* Filter Dropdown */}
+            <div className="relative">
+              <div 
+                onClick={() => {
+                  setIsFilterOpen(!isFilterOpen);
+                  setIsSortOpen(false);
+                }}
+                className="flex items-center gap-2 cursor-pointer group select-none"
+              >
+                <span className="font-label-md text-label-md text-on-surface-variant group-hover:text-primary">Filtrar</span>
+                <span className="material-symbols-outlined text-on-surface-variant group-hover:text-primary" data-icon="tune">tune</span>
+              </div>
+              
+              {isFilterOpen && (
+                <div className="absolute right-0 mt-3 w-56 bg-white border border-outline-variant/30 rounded-2xl shadow-lg z-30 py-2 animate-in fade-in slide-in-from-top-2 duration-200">
+                  <div className="px-4 py-2 border-b border-outline-variant/10 text-xs font-semibold uppercase tracking-wider text-secondary">
+                    Categorias
+                  </div>
+                  <div className="max-h-60 overflow-y-auto no-scrollbar">
+                    {categories.map((cat) => (
+                      <button
+                        key={cat}
+                        onClick={() => {
+                          setSelectedCategory(cat);
+                          setIsFilterOpen(false);
+                        }}
+                        className={`w-full text-left px-4 py-2.5 text-sm transition-colors hover:bg-surface-container-low flex justify-between items-center ${selectedCategory === cat ? 'text-primary font-semibold' : 'text-on-surface-variant'}`}
+                      >
+                        {cat}
+                        {selectedCategory === cat && (
+                          <span className="material-symbols-outlined text-sm">check</span>
+                        )}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              )}
             </div>
-            <div className="flex items-center gap-2 cursor-pointer group">
-              <span className="font-label-md text-label-md text-on-surface-variant group-hover:text-primary">Ordenar</span>
-              <span className="material-symbols-outlined text-on-surface-variant group-hover:text-primary" data-icon="expand_more">expand_more</span>
+
+            {/* Sort Dropdown */}
+            <div className="relative">
+              <div 
+                onClick={() => {
+                  setIsSortOpen(!isSortOpen);
+                  setIsFilterOpen(false);
+                }}
+                className="flex items-center gap-2 cursor-pointer group select-none"
+              >
+                <span className="font-label-md text-label-md text-on-surface-variant group-hover:text-primary">Ordenar</span>
+                <span className="material-symbols-outlined text-on-surface-variant group-hover:text-primary" data-icon="expand_more">expand_more</span>
+              </div>
+              
+              {isSortOpen && (
+                <div className="absolute right-0 mt-3 w-48 bg-white border border-outline-variant/30 rounded-2xl shadow-lg z-30 py-2 animate-in fade-in slide-in-from-top-2 duration-200">
+                  <div className="px-4 py-2 border-b border-outline-variant/10 text-xs font-semibold uppercase tracking-wider text-secondary">
+                    Ordenar Por
+                  </div>
+                  {[
+                    { value: 'default', label: 'Padrão' },
+                    { value: 'price-asc', label: 'Menor Preço' },
+                    { value: 'price-desc', label: 'Maior Preço' },
+                    { value: 'name-asc', label: 'Nome (A-Z)' }
+                  ].map((option) => (
+                    <button
+                      key={option.value}
+                      onClick={() => {
+                        setSelectedSort(option.value);
+                        setIsSortOpen(false);
+                      }}
+                      className={`w-full text-left px-4 py-2.5 text-sm transition-colors hover:bg-surface-container-low flex justify-between items-center ${selectedSort === option.value ? 'text-primary font-semibold' : 'text-on-surface-variant'}`}
+                    >
+                      {option.label}
+                      {selectedSort === option.value && (
+                        <span className="material-symbols-outlined text-sm">check</span>
+                      )}
+                    </button>
+                  ))}
+                </div>
+              )}
             </div>
           </div>
         </section>
@@ -164,7 +252,7 @@ export default function ProductsPage() {
             <p className="text-center py-12 text-on-surface-variant">Nenhum produto encontrado nesta categoria.</p>
           ) : (
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-gutter">
-              {filteredProducts.map((product, index) => (
+              {sortedProducts.map((product, index) => (
                 <div key={product.id} className="product-card group cursor-pointer fade-in flex flex-col justify-between" style={{ animationDelay: `${(index + 1) * 100}ms` }}>
                   <div>
                     <div className="relative aspect-[4/5] overflow-hidden bg-surface-container-low rounded-xl mb-6 luxury-shadow">
