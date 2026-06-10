@@ -167,7 +167,7 @@ export default function Home() {
             <div className="lg:col-span-6 flex flex-col justify-center space-y-8 z-10 py-12">
               <div className="space-y-4">
                 <h1 className="font-display-lg text-display-lg-mobile md:text-display-lg text-primary leading-tight">
-                  A Elegância em <br /> Cada Detalhe.
+                  Elegância em <br /> Cada Detalhe.
                 </h1>
                 <p className="font-body-lg text-body-lg text-on-surface-variant max-w-lg">
                   Joias banhadas a ouro com acabamento artesanal, desenhadas para elevar a sua essência com um brilho atemporal e delicado.
@@ -180,9 +180,9 @@ export default function Home() {
               </div>
             </div>
             <div className="lg:col-span-6 flex items-center justify-center">
-              <div className="relative h-[500px] lg:h-[550px] aspect-[827/1190]">
+              <div className="relative w-full max-w-[550px] aspect-[774/510]">
                 <div className="absolute inset-0 bg-surface-container rounded-2xl rotate-3 -z-10 opacity-60"></div>
-                <img alt="Luxury Jewelry Showcase" className="w-full h-full object-contain luxury-shadow" src="/hero-v2.jfif" />
+                <img alt="Luxury Jewelry Showcase" className="w-full h-full object-cover rounded-2xl luxury-shadow" src="/hero-v3.jpeg" />
               </div>
             </div>
           </div>
