@@ -74,7 +74,7 @@ export default function ProductsPage() {
     };
   }, [loading]);
 
-  const categories = ['Todos', 'Anéis', 'Personalizados', 'Brincos', 'Pulseiras', 'Braceletes', 'Colares', 'Relicários', 'Peças Masculinas', 'Conjuntos', 'Chaveiros', 'Sessão Pet', 'Novidades'];
+  const categories = ['Todos', 'Anéis', 'Personalizados', 'Brincos', 'Pulseiras', 'Braceletes', 'Colares', 'Relicários', 'Peças Masculinas', 'Conjuntos', 'Chaveiros', 'Sessão Pet', 'PRATA 925', 'Novidades'];
 
   const filteredProducts = products.filter(product => {
     if (selectedCategory === 'Todos') return true;

@@ -250,6 +250,7 @@ export default function AdminPage() {
                   <option value="Conjuntos">Conjuntos</option>
                   <option value="Chaveiros">Chaveiros</option>
                   <option value="Sessão Pet">Sessão Pet</option>
+                  <option value="PRATA 925">PRATA 925</option>
                 </select>
               </div>
             </div>
