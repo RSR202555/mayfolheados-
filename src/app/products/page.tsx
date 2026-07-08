@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { useCart } from '@/context/CartContext';
+import SearchModal from '@/components/SearchModal';
 
 interface Product {
   id: string;
@@ -22,6 +23,7 @@ export default function ProductsPage() {
   const [isFilterOpen, setIsFilterOpen] = useState(false);
   const [isSortOpen, setIsSortOpen] = useState(false);
   const [selectedSort, setSelectedSort] = useState('default');
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
   
   const { addToCart, openCart, cartCount } = useCart();
 
@@ -119,13 +121,13 @@ export default function ProductsPage() {
               <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
             </svg>
           </a>
-          <a href="https://wa.me/5575982227063" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-secondary transition-colors active:scale-95 transition-transform duration-300 flex items-center justify-center" title="WhatsApp">
+          <a href="https://wa.me/5575998944041" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-secondary transition-colors active:scale-95 transition-transform duration-300 flex items-center justify-center" title="WhatsApp">
             <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
               <path d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9" />
               <path d="M9 10a0.5 0 0 0 1 0v-1a0.5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a0.5 0 0 0 0 -1h-1a0.5 0 0 0 0 1" />
             </svg>
           </a>
-          <span className="material-symbols-outlined text-primary cursor-pointer active:scale-95 transition-transform hidden md:block" data-icon="search">search</span>
+          <span onClick={() => setIsSearchOpen(true)} className="material-symbols-outlined text-primary cursor-pointer active:scale-95 transition-transform hidden md:block hover:text-secondary" data-icon="search">search</span>
           <div onClick={openCart} className="flex items-center gap-4 cursor-pointer active:scale-95 transition-transform text-primary relative">
             <span className="material-symbols-outlined">shopping_bag</span>
             {cartCount > 0 && (
@@ -317,7 +319,7 @@ export default function ProductsPage() {
           <span className="material-symbols-outlined" data-icon="grid_view">grid_view</span>
           <span className="font-label-md text-[10px] uppercase">Boutique</span>
         </div>
-        <div className="flex flex-col items-center justify-center text-on-surface-variant active:scale-95 transition-all">
+        <div onClick={() => setIsSearchOpen(true)} className="flex flex-col items-center justify-center text-on-surface-variant active:scale-95 transition-all cursor-pointer">
           <span className="material-symbols-outlined" data-icon="search">search</span>
           <span className="font-label-md text-[10px] uppercase">Search</span>
         </div>
@@ -349,7 +351,7 @@ export default function ProductsPage() {
                 <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
               </svg>
             </a>
-            <a href="https://wa.me/5575982227063" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-primary luxury-shadow hover:scale-110 transition-transform" title="WhatsApp">
+            <a href="https://wa.me/5575998944041" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-primary luxury-shadow hover:scale-110 transition-transform" title="WhatsApp">
               <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
                 <path d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9" />
                 <path d="M9 10a0.5 0 0 0 1 0v-1a0.5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a0.5 0 0 0 0 -1h-1a0.5 0 0 0 0 1" />
@@ -389,6 +391,9 @@ export default function ProductsPage() {
           <p className="font-body-md text-body-md text-on-surface-variant">© 2024 may's joias & acessórios. Handcrafted with intention.</p>
         </div>
       </footer>
+
+      {/* Search Modal */}
+      <SearchModal isOpen={isSearchOpen} onClose={() => setIsSearchOpen(false)} />
     </div>
   );
 }
